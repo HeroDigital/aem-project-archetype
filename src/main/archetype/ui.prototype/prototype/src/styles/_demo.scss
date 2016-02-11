@@ -1,0 +1,357 @@
+/*
+--------------------------------------------------
+    Demo c
+-------------------------------------------------- 
+*/
+
+.demo-header{
+    background-color: #000000;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.demo-header h1{
+    color: #ffffff;
+    margin: 0;
+}
+
+.demo-divider{
+    display: block;
+    /*height: 50px;*/
+    width: 100%;
+    background-color: #666666;
+}
+.bg{
+    display: block;
+    width: 100%;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    background-image: -webkit-linear-gradient(45deg,rgba(255, 255, 255, 0.15) 25%,rgba(0, 0, 0, 0) 25%,rgba(0, 0, 0, 0) 50%,rgba(255, 255, 255, 0.15) 50%,rgba(255, 255, 255, 0.15) 75%,rgba(0, 0, 0, 0) 75%,rgba(0, 0, 0, 0));
+    background-image: -o-linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+    background-image: linear-gradient(45deg,rgba(255, 255, 255, 0.15) 25%,rgba(0, 0, 0, 0) 25%,rgba(0, 0, 0, 0) 50%,rgba(255, 255, 255, 0.15) 50%,rgba(255, 255, 255, 0.15) 75%,rgba(0, 0, 0, 0) 75%,rgba(0, 0, 0, 0));
+    -webkit-background-size: 40px 40px;
+    background-size: 40px 40px;
+    background-repeat: repeat;
+    /*background-attachment: fixed;*/
+    box-shadow:0 2px 10px 5px rgba(0,0,0,0.25) inset;
+    color: #ffffff;
+}
+
+/*
+--------------------------------------------------
+    Demo - Code Editor
+-------------------------------------------------- 
+*/
+.like-code{
+    font-family: 'courier new', monospace;
+}
+.demo-block{
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+.demo-block h4{
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.demo-block ul.like-code {
+    margin-bottom: 15px;
+    list-style: none;
+    padding-left: 10px;
+}
+.demo-block ul li {
+    margin-bottom: 5px;
+}
+.demo-block code, 
+.demo-block kbd, 
+.demo-block pre, 
+.demo-block samp {
+    font-family: monospace, serif;
+    font-family: 'courier new', monospace;
+    font-size: 14px;
+    font-weight: bold;
+    /*display: block;*/
+}
+.demo-block p code {
+    font-family: monospace, serif;
+    font-family: 'courier new', monospace;
+    font-size: 14px;
+    font-weight: bold;
+    display: inline;
+}
+
+.demo-block .highlight {
+    padding: 0;
+    margin-top: 14px;
+    /*margin-bottom: 50px;*/
+    background-color: #F7F7F9;
+    border: 1px solid #F06A24;;
+    border-radius: 4px;
+    border: 2px solid #F06A24;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.demo-block .highlight pre {
+    display: block;
+    padding: 0;
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.42857143;
+    color: #333;
+    word-break: break-all;
+    word-wrap: break-word;
+    background-color: #F5F5F5;
+    border: 1px solid #CCC;
+    border-radius: 4px;
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    word-break: normal;
+    white-space: nowrap;
+    background-color: rgba(0, 0, 0, 0);
+    border: 0;
+}
+
+.demo-text-block code, 
+.demo-text-block kbd, 
+.demo-text-block pre, 
+.demo-text-block samp {
+    font-family: monospace, serif;
+    font-family: 'courier new', monospace;
+    font-size: 14px;
+    font-weight: bold;
+    display: inline-block;
+}
+.demo-text-block p code {
+    font-family: monospace, serif;
+    font-family: 'courier new', monospace;
+    font-size: 14px;
+    font-weight: bold;
+    display: inline;
+}
+
+.demo-text-block .highlight {
+    padding: 9px 14px;
+    margin-top: 14px;
+    margin-bottom: 14px;
+    background-color: #F7F7F9;
+    border: 1px solid #E1E1E8;
+    border-radius: 4px;
+}
+.demo-text-block .highlight pre {
+    display: block;
+    padding: 9.5px;
+    margin: 0 0 10px;
+    font-size: 13px;
+    line-height: 1.42857143;
+    color: #333;
+    word-break: break-all;
+    word-wrap: break-word;
+    background-color: #F5F5F5;
+    border: 1px solid #CCC;
+    border-radius: 4px;
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    word-break: normal;
+    white-space: nowrap;
+    background-color: rgba(0, 0, 0, 0);
+    border: 0;
+}
+
+.demo-red{
+    background-color: #ED1921;
+    color: #ffffff;
+}
+.demo-yellow{
+    background-color: #FFD400;
+    color: #000000;
+}
+.demo-blue{
+    background-color: #234EA1;
+    color: #ffffff;
+}
+.demo-red p{
+    color: #ffffff;
+}
+.demo-yellow p{
+    color: #000000;
+}
+.demo-blue p{
+    color: #ffffff;
+}
+.demo-section{
+    position: relative;
+}
+.demo-section div{
+    position: relative;
+}
+.demo-section .container{
+    /*min-height: 300px;*/
+}
+.demo-note{
+    display: none;
+}
+.demo-section .demo-note{
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #cccccc;
+    padding: 3px 6px;
+    color: #000000;
+    font-family: monospace, serif;
+    font-family: 'courier new', monospace;
+    font-size: 12px;
+    z-index: 100;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.2);
+}
+.demo-section .demo-note:hover{
+    z-index: 1000;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+}
+.demo-title{
+    color: #006699;
+    text-transform: uppercase;
+    font-size: 20px;
+    line-height: 30px;
+    padding: 0;
+    margin: 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    border-top: 1px solid #CCC;
+}
+.demo-index p.small{
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+.demo-index .item-title.orange-bg,
+.demo-index .item-title.grey-bg,
+.demo-index .item-title.blue-bg{
+    color: #ffffff;
+}
+.demo-index .item-title.orange-bg a,
+.demo-index .item-title.grey-bg a,
+.demo-index .item-title.blue-bg a{
+    color: #ffffff;
+      font-weight: 700;
+}
+.demo-soic-list .infasoic{
+    font-size: 40px;
+}
+.demo-block .demo-comp-tile{
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.table-index .table > tbody > tr > td{
+    vertical-align: middle;
+}
+pre{
+    tab-size: 4;
+}
+
+.demo-h5{
+    margin-top: 30px;
+}
+/*
+--------------------------------------------------
+    Demo - Code display
+-------------------------------------------------- 
+*/
+.hljs
+{
+    display:block;
+    overflow-x:auto;
+    padding:10px 30px 10px 30px;
+    background:#3f3f3f;
+    color:#dcdcdc;
+    -webkit-text-size-adjust:none
+}
+.hljs.code-to-escape{
+  padding-top: 0px;
+  margin-top: -20px;
+}
+.hljs-keyword,.hljs-tag,.css .hljs-class,.css .hljs-id,.lisp .hljs-title,.nginx .hljs-title,.hljs-request,.hljs-status,.clojure .hljs-attribute
+{
+    color:#e3ceab
+}
+.django .hljs-template_tag,.django .hljs-variable,.django .hljs-filter .hljs-argument
+{
+    color:#dcdcdc
+}
+.hljs-number,.hljs-date
+{
+    color:#8cd0d3
+}
+.dos .hljs-envvar,.dos .hljs-stream,.hljs-variable,.apache .hljs-sqbracket,.hljs-name
+{
+    color:#efdcbc
+}
+.dos .hljs-flow,.diff .hljs-change,.python .exception,.python .hljs-built_in,.hljs-literal,.tex .hljs-special
+{
+    color:#efefaf
+}
+.diff .hljs-chunk,.hljs-subst
+{
+    color:#8f8f8f
+}
+.dos .hljs-keyword,.hljs-decorator,.hljs-title,.hljs-type,.diff .hljs-header,.ruby .hljs-class .hljs-parent,.apache .hljs-tag,.nginx .hljs-built_in,.tex .hljs-command,.hljs-prompt
+{
+    color:#efef8f
+}
+.dos .hljs-winutils,.ruby .hljs-symbol,.ruby .hljs-symbol .hljs-string,.ruby .hljs-string
+{
+    color:#dca3a3
+}
+.diff .hljs-deletion,.hljs-string,.hljs-tag .hljs-value,.hljs-preprocessor,.hljs-pragma,.hljs-built_in,.smalltalk .hljs-class,.smalltalk .hljs-localvars,.smalltalk .hljs-array,.css .hljs-rule .hljs-value,.hljs-attr_selector,.hljs-pseudo,.apache .hljs-cbracket,.tex .hljs-formula,.coffeescript .hljs-attribute
+{
+    color:#cc9393
+}
+.hljs-shebang,.diff .hljs-addition,.hljs-comment,.hljs-annotation,.hljs-pi,.hljs-doctype
+{
+    color:#7f9f7f
+}
+.coffeescript .javascript,.javascript .xml,.tex .hljs-formula,.xml .javascript,.xml .vbscript,.xml .css,.xml .hljs-cdata
+{
+    opacity:0.5
+}
+
+.demo-page-order{
+    display: none;
+}
+
+/*
+--------------------------------------------------
+    Demo - Spacing
+-------------------------------------------------- 
+*/
+
+.demo-space-box{
+    display: block;
+
+}
+.demo-space-box-inner{
+    padding: 5px 0px;
+    display: block;
+    background-color: #dddddd;
+    text-align: center;
+    line-height: 30px;
+    font-size: 16px;
+
+}
+.demo-space-box-inner.side-space-demo{
+    padding: 15px 0;
+}
+
+.red-box{
+    background-color: #f2dede;
+}
+.blue-box{
+    background-color: #d9edf7;
+}
+.green-box{
+    background-color: #dff0d8;
+}
+

@@ -19,3 +19,9 @@
 
 <!--/* Include Adobe Dynamic Tag Management libraries for the footer */-->
 <sly data-sly-resource="${symbol_dollar}{@ resourceType='cq/cloudserviceconfigs/components/servicecomponents'}" data-sly-unwrap/>
+
+<!--/* Timing */-->
+<div data-sly-use.timing="${package}.core.models.TimingModel" 
+    data-sly-test="${symbol_dollar}{timing.showTiming}" 
+    data-sly-resource="${symbol_dollar}{'timing' @ resourceType='foundation/components/timing'}">
+</div>

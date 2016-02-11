@@ -1,0 +1,117 @@
+{
+    "name": "uiprototype",
+    "jcr_root": "ui.apps/src/main/content/jcr_root",
+    "css_preprocessor": "scss",
+    "build_root": "ui.prototype",
+    "aemClientlibs": [
+        "${artifactName}.internal"
+    ],
+    "build_tool": "gulp",
+    "clientlibraries": [
+        {
+            "name": "pagelibs",
+            "aemPath": "ui.apps/src/main/content/jcr_root/etc/clientlibs/${artifactName}-pagelibs",
+            "path": "client-libraries/pagelibs/",
+            "entry": {
+                "js": "client-libraries/pagelibs/pagelibs.js",
+                "style": "client-libraries/pagelibs/styles/pagelibs.scss"
+            },
+            "components": [
+                {
+                    "name": "siteHeader",
+                    "clientlibraries": [
+                        "pagelibs"
+                    ]
+                },
+                {
+                    "name": "siteFooter",
+                    "clientlibraries": [
+                        "pagelibs"
+                    ]
+                },
+                {
+                    "name": "background",
+                    "clientlibraries": [
+                        "pagelibs"
+                    ]
+                },
+                {
+                    "name": "textBasic",
+                    "clientlibraries": [
+                        "pagelibs"
+                    ]
+                },
+                {
+                    "name": "image",
+                    "clientlibraries": [
+                        "pagelibs"
+                    ]
+                },
+                {
+                    "name": "textImage",
+                    "clientlibraries": [
+                        "pagelibs"
+                    ]
+                },
+                {
+                    "name": "textList",
+                    "clientlibraries": [
+                        "pagelibs"
+                    ]
+                }
+            ],
+            "defaultComponents": false,
+            "styleType": "scss"
+        }
+    ],
+    "default_components": [],
+    "components": [
+        {
+            "name": "siteHeader",
+            "clientlibraries": [
+                "pagelibs"
+            ]
+        },
+        {
+            "name": "siteFooter",
+            "clientlibraries": [
+                "pagelibs"
+            ]
+        },
+        {
+            "name": "background",
+            "clientlibraries": [
+                "pagelibs"
+            ]
+        },
+        {
+            "name": "textBasic",
+            "clientlibraries": [
+                "pagelibs"
+            ]
+        },
+        {
+            "name": "image",
+            "clientlibraries": [
+                "pagelibs"
+            ]
+        },
+        {
+            "name": "textImage",
+            "clientlibraries": [
+                "pagelibs"
+            ]
+        },
+        {
+            "name": "textList",
+            "clientlibraries": [
+                "pagelibs"
+            ]
+        }
+    ],
+    "_": [],
+    "configs": [
+        ""
+    ],
+    "config": ""
+}

@@ -1,0 +1,75 @@
+/*
+--------------------------------------------------
+    Forms
+-------------------------------------------------- 
+*/
+
+/*
+--------------------------------------------------
+    Override bootstrap defaults for 
+    Classic UI authoring fixes.
+-------------------------------------------------- 
+*/
+.x-window {
+
+    label {
+      display: inline;
+      max-width: 100%; // Force IE8 to wrap long content (see https://github.com/twbs/bootstrap/issues/13141)
+      font-weight: normal;
+    }
+
+    legend {
+        display: inline;
+        width: auto;
+        margin-bottom: 0px;
+        border-bottom: none;
+    }
+
+    fieldset {
+        min-width: auto;
+    }
+
+}
+
+//------------------------------------------------
+//  Global Forms
+//
+
+form{
+  .btn{
+    margin-top: 20px;
+  }
+}
+.mktoFormRow,
+.form-group {
+  margin-bottom: 20px;
+
+  label{
+    margin-bottom: 5px;
+    display: block;
+
+  }
+}
+
+
+/*
+    Responsive (mobile first)
+    XS: 480px | SM: 768px | MD: 992px | LG: 1200px
+--------------------------------------------------
+*/
+
+/* SM Phone */
+@media(min-width: $breakpoint_sm){
+    
+}
+@media(max-width: ( $breakpoint_md - 1) ) {
+
+}
+/* MD Tablet */
+@media(min-width: $breakpoint_md){
+    
+}
+/* LG Desktop */
+@media(min-width: $breakpoint_lg){
+
+}

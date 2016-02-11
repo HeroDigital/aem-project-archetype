@@ -1,0 +1,31 @@
+#set( $symbol_dollar = '$' )
+<!--/* 
+
+This is a helper template that will print all variables your Sightly component has access to.
+
+Copy/paste the below Sightly into your component:
+
+<sly data-sly-use.debug="../_debugging/_debugging.html" data-sly-call="${symbol_dollar}{debug.renderDebugging @ model=model}" />
+OR
+<sly data-sly-use.model="NAME_OF_YOUR_FULLY_QUALIFIED_JAVA_COMPONENT_MODEL_CLASS" data-sly-use.debug="../_debugging/_debugging.html" data-sly-call="${symbol_dollar}{debug.renderDebugging @ model = model}" />
+
+*/-->
+<template data-sly-template.renderDebugging="${symbol_dollar}{ @ model }">
+    <span class="edit-start container" data-sly-test="${symbol_dollar}{wcmmode.edit}">&nbsp;&#9487;&#9473; START DEBUG OUTPUT FOR ${symbol_dollar}{resource.path} &#9473;&#9491;</span>
+    <hr/>
+    <p><b>This bean provides access to the following variables for Sightly:</b></p>
+    <table data-sly-list="${symbol_dollar}{model.debugModelKeys}">
+        <tr>
+            <td>${symbol_dollar}{item}</td>
+            <td>${symbol_dollar}{model.debugModel[item]}</td>
+        </tr>
+    </table>
+    <hr/>
+    <p><b>This bean is composed of the following models/mixins:</b></p>
+    <table data-sly-list="${symbol_dollar}{model.debugTypes}">
+        <tr><td>${symbol_dollar}{item}</td></tr>
+    </table>
+    <hr/>
+    <span class="edit-end container" data-sly-test="${symbol_dollar}{wcmmode.edit}">&nbsp;&#9495;&#9473; END DEBUG OUTPUT FOR ${symbol_dollar}{resource.path} &#9473;&#9499;</span>
+</template>
+

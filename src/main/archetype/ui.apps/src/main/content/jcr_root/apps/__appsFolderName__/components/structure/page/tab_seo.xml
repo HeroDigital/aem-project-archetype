@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Panel"
+    title="SEO">
+    <items jcr:primaryType="cq:WidgetCollection">
+        <seoPagetitle
+            jcr:primaryType="cq:Widget"
+            fieldLabel="SEO Page Title"
+            name="./seoPageTitle"
+            xtype="textfield"/>
+        <seoDescription
+            jcr:primaryType="cq:Widget"
+            fieldLabel="SEO Description"
+            name="./seoDescription"
+            xtype="textarea"/>
+        <changefreq
+            jcr:primaryType="cq:Widget"
+            fieldLabel="Sitemap Change Frequency"
+            fieldDescription="How frequently the page is likely to change. This value provides general information to search engines and may not correlate exactly to how often they crawl the page. 'always' describes pages that change each time they are accessed."
+            name="./changefreq"
+            type="select"
+            xtype="selection">
+            <options jcr:primaryType="cq:WidgetCollection">
+                <always
+                    jcr:primaryType="nt:unstructured"
+                    text="always"
+                    value="always"/>
+                <hourly
+                    jcr:primaryType="nt:unstructured"
+                    text="hourly"
+                    value="hourly"/>
+                <daily
+                    jcr:primaryType="nt:unstructured"
+                    text="daily"
+                    value="daily"/>
+                <weekly
+                    jcr:primaryType="nt:unstructured"
+                    text="weekly"
+                    value="weekly"/>
+                <monthly
+                    jcr:primaryType="nt:unstructured"
+                    text="monthly"
+                    value="monthly"/>
+                <yearly
+                    jcr:primaryType="nt:unstructured"
+                    text="yearly"
+                    value="yearly"/>
+                <never
+                    jcr:primaryType="nt:unstructured"
+                    text="never"
+                    value="never"/>
+            </options>
+        </changefreq>
+        <changefreq
+            jcr:primaryType="cq:Widget"
+            fieldLabel="Robots Options"
+            fieldDescription="Default means no special rules. Rules apply to this page only. For the noindex meta tag to be effective, the page must not be blocked by a robots.txt file."
+            defaultValue="default"
+            name="./robotsOptions"
+            type="select"
+            xtype="selection">
+            <options jcr:primaryType="cq:WidgetCollection">
+                <noRules
+                    jcr:primaryType="nt:unstructured"
+                    text="Default"
+                    value="default"/>
+                <noindex
+                    jcr:primaryType="nt:unstructured"
+                    text="No Index"
+                    value="noindex"/>
+                <noindexNoFollow
+                    jcr:primaryType="nt:unstructured"
+                    text="No Index, No Follow"
+                    value="noindex, nofollow"/>
+            </options>
+        </changefreq>
+        <inherited
+            jcr:primaryType="cq:Widget"
+            collapsed="{Boolean}false"
+            collapsible="{Boolean}true"
+            title="Inheritable Properties"
+            xtype="dialogfieldset">
+            <items jcr:primaryType="cq:WidgetCollection">
+                <seoTitleSuffix
+                    jcr:primaryType="cq:Widget"
+                    fieldLabel="SEO Page Title Suffix"
+                    fieldDescription="Text appended to the end of HTML &lt;title&gt; tag"
+                    name="./seoTitleSuffix"
+                    xtype="textfield"/>
+                <seoTwitterHandle
+                    jcr:primaryType="cq:Widget"
+                    fieldLabel="Site Twitter Handle"
+                    fieldDescription="Twitter handle associated with the site"
+                    name="./seoTwitterHandle"
+                    xtype="textfield"/>
+                <priority
+                    jcr:primaryType="cq:Widget"
+                    fieldLabel="Sitemap Priority"
+                    fieldDescription="The priority of this URL relative to other URLs on your site. Valid values range from 0.0 to 1.0. This value does not affect how your pages are compared to pages on other sites. Default is 0.5. This value is inherited by child pages (except when set on the homepage)."
+                    name="./priority"
+                    type="select"
+                    xtype="selection">
+                    <options jcr:primaryType="cq:WidgetCollection">
+                        <p0
+                            jcr:primaryType="nt:unstructured"
+                            text="0.0"
+                            value="0.0"/>
+                        <p1
+                            jcr:primaryType="nt:unstructured"
+                            text="0.1"
+                            value="0.1"/>
+                        <p2
+                            jcr:primaryType="nt:unstructured"
+                            text="0.2"
+                            value="0.2"/>
+                        <p3
+                            jcr:primaryType="nt:unstructured"
+                            text="0.3"
+                            value="0.3"/>
+                        <p4
+                            jcr:primaryType="nt:unstructured"
+                            text="0.4"
+                            value="0.4"/>
+                        <p5
+                            jcr:primaryType="nt:unstructured"
+                            text="0.5"
+                            value="0.5"/>
+                        <p6
+                            jcr:primaryType="nt:unstructured"
+                            text="0.6"
+                            value="0.6"/>
+                        <p7
+                            jcr:primaryType="nt:unstructured"
+                            text="0.7"
+                            value="0.7"/>
+                        <p8
+                            jcr:primaryType="nt:unstructured"
+                            text="0.8"
+                            value="0.8"/>
+                        <p9
+                            jcr:primaryType="nt:unstructured"
+                            text="0.9"
+                            value="0.9"/>
+                        <p10
+                            jcr:primaryType="nt:unstructured"
+                            text="1.0"
+                            value="1.0"/>
+                    </options>
+                </priority>
+            </items>
+        </inherited>
+    </items>
+</jcr:root>

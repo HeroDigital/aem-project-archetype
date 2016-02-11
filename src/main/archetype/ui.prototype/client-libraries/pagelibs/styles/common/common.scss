@@ -1,0 +1,42 @@
+//------------------------------------------------
+//  Common Components/Styles 
+//
+.no-link{
+	cursor: pointer;
+}
+
+a{
+    text-decoration: none;
+
+    &:hover,
+    &:focus{
+        text-decoration: none;
+    }
+}
+
+// Responsive img fix
+.img-responsive{
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+}
+
+// Lazy load
+.lazyload,
+.lazyloading {
+    opacity: 0;
+}
+
+.preprod .lazyload,
+.preprod .lazyloading {
+    opacity: 1;
+}
+.lazyloaded {
+    opacity: 1;
+    transition: opacity 300ms;
+}
+
+var{
+    font-style: normal;
+}

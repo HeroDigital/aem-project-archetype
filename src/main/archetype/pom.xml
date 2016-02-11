@@ -24,6 +24,7 @@
 
     <modules>
         <module>core</module>
+        <module>ui.prototype</module> <!-- HERO: static html module -->
         <module>ui.apps</module>
         <module>ui.content</module>
         <module>it.tests</module>
@@ -87,8 +88,8 @@
                                     <version>[2.2.1,)</version>
                                 </requireMavenVersion>
                                 <requireJavaVersion>
-                                    <message>Project must be compiled with Java 6 or higher</message>
-                                    <version>1.6.0</version>
+                                    <message>Project must be compiled with Java 8 or higher</message> <!-- HERO: Need Java 8 for CQ Component Plugin use cases -->
+                                    <version>1.8.0</version> <!-- HERO: Need Java 8 for CQ Component Plugin use cases -->
                                 </requireJavaVersion>
                             </rules>
                         </configuration>
@@ -99,9 +100,9 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
+                <configuration> 
+                    <source>1.8</source> <!-- HERO: Need Java 8 for CQ Component Plugin use cases -->
+                    <target>1.8</target> <!-- HERO: Need Java 8 for CQ Component Plugin use cases -->
                 </configuration>
             </plugin>
             <!-- Maven IntelliJ IDEA Plugin -->
@@ -110,7 +111,7 @@
                 <artifactId>maven-idea-plugin</artifactId>
                 <version>2.2.1</version>
                 <configuration>
-                    <jdkLevel>1.6</jdkLevel>
+                    <jdkLevel>1.8</jdkLevel> <!-- HERO: Need Java 8 for CQ Component Plugin use cases -->
                     <linkModules>true</linkModules>
                     <downloadSources>true</downloadSources>
                 </configuration>
@@ -234,7 +235,7 @@
                 <plugin>
                     <groupId>org.apache.felix</groupId>
                     <artifactId>maven-bundle-plugin</artifactId>
-                    <version>2.5.3</version>
+                    <version>2.5.4</version> <!-- HERO: Updated version to 2.5.4 -->
                     <inherited>true</inherited>
                 </plugin>
                 <!-- Maven Enforcer Plugin -->
@@ -320,6 +321,25 @@
                             </pluginExecutions>
                         </lifecycleMappingMetadata>
                     </configuration>
+                </plugin>
+
+                <!-- HERO: CQ Component Plugin used to generate component dialog.xml files -->
+                <plugin>  
+                    <groupId>com.citytechinc.cq.cq-component-plugin</groupId>  
+                    <artifactId>cq-component-maven-plugin</artifactId>  
+                    <version>4.0.0</version>  
+                    <executions>  
+                        <execution>  
+                            <goals>  
+                                <goal>component</goal>  
+                            </goals>  
+                            <configuration>  
+                                <componentPathBase>/jcr_root/apps/${appsFolderName}/components/content</componentPathBase>  
+                                <componentPathSuffix>/</componentPathSuffix>  
+                                <transformerName>camel-case</transformerName>  
+                            </configuration>  
+                        </execution>  
+                    </executions>  
                 </plugin>
             </plugins>
         </pluginManagement>
@@ -415,7 +435,7 @@
             <dependency>
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-api</artifactId>
-                <version>1.5.11</version>
+                <version>1.7.6</version> <!-- HERO: Updating to more current version -->
                 <scope>provided</scope>
             </dependency>
             <!-- Apache Sling Dependencies -->
@@ -485,6 +505,28 @@
                 <version>1.4</version>
                 <scope>test</scope>
             </dependency>
+
+            <!-- HERO: Additional dependencies to support CQ Component Plugin -->
+            <dependency>  
+                <groupId>com.citytechinc.cq.cq-component-plugin</groupId>  
+                <artifactId>cq-component-annotations</artifactId>  
+                <version>4.0.0</version>  
+                <scope>provided</scope>
+            </dependency>  
+            <dependency>  
+                <groupId>com.citytechinc.cq.cq-component-plugin</groupId>  
+                <artifactId>cq-component-maven-plugin</artifactId>  
+                <version>4.0.0</version>  
+                <scope>provided</scope>
+            </dependency>
+            <!-- HERO: Commons Lang -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>3.3.2</version>
+                <scope>provided</scope>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 

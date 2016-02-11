@@ -1,0 +1,60 @@
+---
+pagetitle: Background
+published: true
+layout: doc
+pagetype: base
+pagedescription: 
+order: 1
+---
+
+<!-- Background Component -->
+<section class="background-component vert-pad-sm">
+    <div class="container">
+
+		<h2>{{ pagetitle }}</h2>
+		<span class="demo-subtitle">component</span>
+
+	</div>
+</section>
+
+{{#with doc_background }}
+
+{{> demo_divider demo1 }}
+
+{{> background-start bgCompSample1 }}
+	{{> textBasic sampleText }}
+{{> background-end bgCompSample1 }}
+
+{{> demo_divider demo2 }}
+
+{{> background-start bgCompSample2 }}
+	{{> image imageData }}
+{{> background-end bgCompSample2 }}
+
+{{> background-start bgCompSample3 }}
+	{{> textBasic sampleText }}
+{{> background-end bgCompSample3 }}
+
+{{> demo_divider demo4 }}
+
+{{> background-start bgCompSample4 }}
+	{{> textBasic sampleText }}
+{{> background-end bgCompSample4 }}
+
+{{> background-start bgCompSample41 }}
+	{{> textBasic sampleText }}
+{{> background-end bgCompSample41 }}
+
+{{> demo_divider demo5 }}
+
+{{> background-start bgCompSample5 }}
+	{{> textBasic sampleText }}
+{{> background-end bgCompSample5 }}
+
+{{> background-start bgCompSample51 }}
+	{{> textBasic sampleText }}
+{{> background-end bgCompSample51 }}
+
+{{> demo_divider }}
+
+{{/with}}

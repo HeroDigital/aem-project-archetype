@@ -4,5 +4,10 @@
         <exclude pattern="/apps/${appsFolderName}/install" />
     </filter>
     <filter root="/apps/sling" />
-    <filter root="/etc/designs/${appsFolderName}"/>
+    <filter root="/apps/wcm" />
+    <filter root="/etc/designs/${appsFolderName}">
+        <exclude pattern="/etc/designs/${appsFolderName}/jcr:content"/>
+    </filter>
+    <filter root="/etc/clientlibs/${artifactName}-headlibs"/>
+    <filter root="/etc/clientlibs/${artifactName}-pagelibs"/>
 </workspaceFilter>

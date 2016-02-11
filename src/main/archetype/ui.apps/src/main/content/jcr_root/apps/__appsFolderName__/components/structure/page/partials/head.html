@@ -14,8 +14,12 @@
     limitations under the License.
 */-->
 #set( $symbol_dollar = '$' )
-<meta charset="utf-8" data-sly-use.head="head.js">
-<title>${symbol_dollar}{currentPage.title || currentPage.name}</title>
-<meta name="keywords" content="${symbol_dollar}{head.keywords}"/>
-<meta name="description" content="${symbol_dollar}{properties.jcr:description}"/>
+<meta charset="utf-8" data-sly-use.head="head.js" data-sly-use.metatags="${package}.core.models.MetaTagModel">
+
+<title>${symbol_dollar}{metatags.title}</title>
+<link data-sly-test="${symbol_dollar}{metatags.canonicalUrl}" rel="canonical" href="${symbol_dollar}{metatags.canonicalUrl}" />
+<sly data-sly-list.tag="${symbol_dollar}{metatags.metaTags}">
+    <meta data-sly-attribute="${symbol_dollar}{tag.metaAttributeMap}"/>
+</sly>
+
 <link data-sly-test="${symbol_dollar}{head.favIcon}" rel="icon" href="${symbol_dollar}{head.favIcon}"/>

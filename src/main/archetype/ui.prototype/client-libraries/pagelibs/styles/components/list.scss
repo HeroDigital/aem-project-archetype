@@ -1,0 +1,49 @@
+/*
+--------------------------------------------------
+    List Shared Styling
+-------------------------------------------------- 
+*/
+
+.list{
+
+	.list-item{
+		background: rgb(255, 255, 255);
+		// background-color: rgba(0,0,0,0.05);
+		
+
+		&:nth-of-type(odd) {
+    		//background-color: $table-bg-accent;
+    		background: rgb(245, 245, 245);
+			// background-color: rgba(0,0,0,0.1);
+  		}
+	}	
+
+	&.opacity-1{
+		.list-item{
+			background: rgba(51, 51, 51, 0.05);
+			
+			&:nth-of-type(odd) {
+				background: rgba(51, 51, 51, 0.10);
+	  		}
+		}
+	}
+}
+
+/*
+    Responsive (mobile first)
+    XS: 480px | SM: 768px | MD: 992px | LG: 1200px
+--------------------------------------------------
+*/
+
+/* SM Phone */
+@media(min-width: $breakpoint_sm){
+    
+}
+/* MD Tablet */
+@media(min-width: $breakpoint_md){
+    
+}
+/* LG Desktop */
+@media(min-width: $breakpoint_lg){
+    
+}

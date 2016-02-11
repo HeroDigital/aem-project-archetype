@@ -1,0 +1,349 @@
+/*
+--------------------------------------------------
+    Space around Components
+
+    $space_xs:                      20px;
+    $space_sm:                      40px;
+    $space_md:                      80px;
+    $space_lg:                      120px;
+-------------------------------------------------- 
+*/
+
+$spacing_xs:                      20px;
+$spacing_sm:                      40px;
+$spacing_ms:                      60px;
+$spacing_md:                      80px;
+$spacing_lg:                      120px;
+$spacing_xl:                      200px;
+
+
+
+// Container
+[class*="space-"]{
+    .container{
+        // padding-left: $spacing_xs;
+        // padding-right: $spacing_xs;
+    }
+}
+
+// Vertical Top Space
+.space-top{
+    padding-top: $spacing_xs !important;
+}
+.space-xs-top{
+    padding-top: $spacing_xs !important;
+}
+.space-sm-top{
+    padding-top: $spacing_sm !important;
+}
+.space-ms-top{
+    padding-top: $spacing_ms !important;
+}
+.space-md-top{
+    padding-top: $spacing_md !important;
+}
+.space-lg-top{
+    padding-top: $spacing_lg !important;
+}
+.space-xl-top{
+    padding-top: $spacing_xl !important;
+}
+
+// Vertical Bottom Space
+.space-bottom{
+    padding-bottom: $spacing_xs;
+}
+.space-xs-bottom{
+    padding-bottom: $spacing_xs;
+}
+.space-sm-bottom{
+    padding-bottom: $spacing_sm;
+}
+.space-ms-bottom{
+    padding-bottom: $spacing_ms;
+}
+.space-md-bottom{
+    padding-bottom: $spacing_md;
+}
+.space-lg-bottom{
+    padding-bottom: $spacing_lg;
+}
+.space-xl-bottom{
+    padding-bottom: $spacing_xl;
+}
+
+// Horizontal Both Sides Space
+.space-side{
+    padding-left: $spacing_xs;
+    padding-right: $spacing_xs;
+}
+.space-xs-side{
+    padding-left: $spacing_xs;
+    padding-right: $spacing_xs;
+}
+.space-sm-side{
+    padding-left: $spacing_sm;
+    padding-right: $spacing_sm;
+}
+.space-ms-side{
+    padding-left: $spacing_ms;
+    padding-right: $spacing_ms;
+}
+.space-md-side{
+    padding-left: $spacing_md;
+    padding-right: $spacing_md;
+}
+.space-lg-side{
+    padding-left: $spacing_lg;
+    padding-right: $spacing_lg;
+}
+.space-xl-side{
+    padding-left: $spacing_xl;
+    padding-right: $spacing_xl;
+}
+// Horizontal Left Space
+.space-left{
+    padding-left: $spacing_xs;
+}
+.space-xs-left{
+    padding-left: $spacing_xs;
+}
+.space-sm-left{
+    padding-left: $spacing_sm;
+}
+.space-ms-left{
+    padding-left: $spacing_ms;
+}
+.space-md-left{
+    padding-left: $spacing_md;
+}
+.space-lg-left{
+    padding-left: $spacing_lg;
+}
+.space-xl-left{
+    padding-left: $spacing_xl;
+}
+// Horizontal Right Space
+.space-right{
+    padding-right: $spacing_xs;
+}
+.space-xs-right{
+    padding-right: $spacing_xs;
+}
+.space-sm-right{
+    padding-right: $spacing_sm;
+}
+.space-ms-right{
+    padding-right: $spacing_ms;
+}
+.space-md-right{
+    padding-right: $spacing_md;
+}
+.space-lg-right{
+    padding-right: $spacing_lg;
+}
+// Horizontal Side Space on Container
+.space{
+    .container{
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+.space-side-full{
+    .container{
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+.space-side-wide{
+    .container{
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+.space-side-wide-pull-left{
+    .container{
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+        margin: 0;
+    }
+}
+.space-side-narrow{
+    .container{
+        max-width: 600px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+/*
+    Responsive (mobile first)
+    XS: 480px | SM: 768px | MD: 992px | LG: 1200px
+--------------------------------------------------
+*/
+
+/* Just SM Phone */
+@media( max-width: ( $breakpoint_sm - 1 ) ){
+
+}
+/* SM Phone */
+@media( min-width: $breakpoint_sm){
+
+    // Vertical Top Space
+    .space-top{
+        padding-top: $spacing_xs !important;
+    }
+    .space-xs-top{
+        padding-top: $spacing_xs !important;
+    }
+    .space-sm-top{
+        padding-top: $spacing_sm !important;
+    }
+    .space-ms-top{
+        padding-top: $spacing_ms !important;
+    }
+    .space-md-top{
+        padding-top: $spacing_md !important;
+    }
+    .space-lg-top{
+        padding-top: $spacing_lg !important;
+    }
+    .space-xl-top{
+        padding-top: $spacing_xl !important;
+    }
+
+    // Vertical Bottom Space
+    .space-bottom{
+        padding-bottom: $spacing_xs;
+    }
+    .space-xs-bottom{
+        padding-bottom: $spacing_xs;
+    }
+    .space-sm-bottom{
+        padding-bottom: $spacing_sm;
+    }
+    .space-ms-bottom{
+        padding-bottom: $spacing_ms;
+    }
+    .space-md-bottom{
+        padding-bottom: $spacing_md;
+    }
+    .space-lg-bottom{
+        padding-bottom: $spacing_lg;
+    }
+    .space-xl-bottom{
+        padding-bottom: $spacing_xl;
+    }
+
+    // Horizontal Both Sides Space
+    .space-side{
+        padding-left: $spacing_xs;
+        padding-right: $spacing_xs;
+    }
+    .space-xs-side{
+        padding-left: $spacing_xs;
+        padding-right: $spacing_xs;
+    }
+    .space-sm-side{
+        padding-left: $spacing_sm;
+        padding-right: $spacing_sm;
+    }
+    .space-ms-side{
+        padding-left: $spacing_ms;
+        padding-right: $spacing_ms;
+    }
+    .space-md-side{
+        padding-left: $spacing_md;
+        padding-right: $spacing_md;
+    }
+    .space-lg-side{
+        padding-left: $spacing_lg;
+        padding-right: $spacing_lg;
+    }
+    .space-xl-side{
+        padding-left: $spacing_xl;
+        padding-right: $spacing_xl;
+    }
+    // Horizontal Left Space
+    .space-left{
+        padding-left: $spacing_xs;
+    }
+    .space-xs-left{
+        padding-left: $spacing_xs;
+    }
+    .space-sm-left{
+        padding-left: $spacing_sm;
+    }
+    .space-ms-left{
+        padding-left: $spacing_ms;
+    }
+    .space-md-left{
+        padding-left: $spacing_md;
+    }
+    .space-lg-left{
+        padding-left: $spacing_lg;
+    }
+    .space-xl-left{
+        padding-left: $spacing_xl;
+    }
+    // Horizontal Right Space
+    .space-right{
+        padding-right: $spacing_xs;
+    }
+    .space-xs-right{
+        padding-right: $spacing_xs;
+    }
+    .space-sm-right{
+        padding-right: $spacing_sm;
+    }
+    .space-ms-right{
+        padding-right: $spacing_ms;
+    }
+    .space-md-right{
+        padding-right: $spacing_md;
+    }
+    .space-lg-right{
+        padding-right: $spacing_lg;
+    }
+}
+/* Between SM Phone and MD Tablet */
+@media( min-width: ( $breakpoint_sm ) ) and ( max-width: ( $breakpoint_md - 1 ) ){
+    
+}
+/* MD Tablet */
+@media( min-width: $breakpoint_md){
+
+    .space-side-narrow{
+        .container{
+            max-width: 800px;
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+}
+/* Between MD Tablet and LG Desktop */
+@media( min-width: ( $breakpoint_md ) ) and ( max-width: ( $breakpoint_lg - 1 ) ){
+    
+}
+/* LG Desktop */
+@media( min-width: $breakpoint_lg){
+
+    .space-side-wide{
+        .container{
+            max-width: 1170px;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    }
+    .space-side-wide-pull-left{
+        .container{
+            max-width: 1170px;
+            padding-left: $spacing_lg;
+            padding-right: 15px;
+            margin: 0;
+        }
+    }
+}

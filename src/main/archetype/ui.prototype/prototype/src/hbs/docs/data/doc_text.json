@@ -1,0 +1,16 @@
+{    
+    "bgCompSample1": {
+        "background_component": true,
+        "background_class": "vert-pad-md white-bg"
+    },
+    "demo1":{
+        "demo_text_title": "Variation left align, all text is link",
+        "demo_text": "<p>class: no-bg-image</p>"
+    },
+    "sampleText": {
+        "content_text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur congue metus convallis velit ultricies, sit amet fermentum dolor consectetur. Vivamus sit amet luctus leo, in gravida nibh. Donec iaculis pretium aliquet.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur congue metus convallis velit ultricies, sit amet fermentum dolor consectetur. Vivamus sit amet luctus leo, in gravida nibh. Donec iaculis pretium aliquet.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur congue metus convallis velit ultricies, sit amet fermentum dolor consectetur. Vivamus sit amet luctus leo, in gravida nibh. Donec iaculis pretium aliquet.</p>"
+    },
+    "sampleText2": {
+        "content_text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur congue metus convallis velit ultricies, sit amet fermentum dolor consectetur. Vivamus sit amet luctus leo, in gravida nibh. Donec iaculis pretium aliquet.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur congue metus convallis velit ultricies, sit amet fermentum dolor consectetur. Vivamus sit amet luctus leo, in gravida nibh. Donec iaculis pretium aliquet.</p>"
+    }
+}

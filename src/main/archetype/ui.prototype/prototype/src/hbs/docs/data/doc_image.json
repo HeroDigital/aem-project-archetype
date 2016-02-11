@@ -1,0 +1,152 @@
+{    
+    "demo1":{
+        "demo_text_title": "Default variation",
+        "demo_text": "<p>Image without title or caption</p>"
+    },
+    "bgCompSample1": {
+        "background_component": true,
+        "background_class": "vert-pad-md white-bg"
+    },
+    "imageData1": 
+    {
+        "component": "image",
+        "background_component": false,
+        "background_class": "",
+        "component_class": "",
+        "content_align": "middle left",
+        "content_title": "",
+        "content_text": "<p>Increase workflow efficiency across IT, HR, Facilities, Field Services, and other service domains.</p>",
+        "content_image": "../img/image_sample.jpg",
+        "content_image_link": "#",
+        "content_image_title": "Increase workflow efficiency across IT, HR, Facilities, Field Services, and other service domains.",
+        "content_image_alt": "",
+        "content_image_icon": "http://placehold.it/200x90/111111/ffffff",
+        "content_image_icon_title": "",
+        "content_image_icon_alt": "",
+        "content_button_nr": 1,
+        "content_button_align": "",
+        "content_button_class": "",
+        "content_button_label": "",
+        "content_button_href": ""
+    },
+    "demo2":{
+        "demo_text_title": "Variation: with title on top",
+        "demo_text": "<p>class: <code>.with-title-top</code></p>"
+    },
+    "bgCompSample2": {
+        "background_component": true,
+        "background_class": "vert-pad-md white-bg"
+    },
+    "imageData2": 
+    {
+        "component": "image",
+        "background_component": false,
+        "background_class": "",
+        "component_class": "with-title-top",
+        "content_align": "middle left",
+        "content_title": "",
+        "content_text": "<p>Increase workflow efficiency across IT, HR, Facilities, Field Services, and other service domains.</p>",
+        "content_image": "../img/image_sample.jpg",
+        "content_image_link": "",
+        "content_image_title": "Increase workflow efficiency across IT, HR, Facilities, Field Services, and other service domains.",
+        "content_image_alt": "",
+        "content_image_icon": "http://placehold.it/200x90/111111/ffffff",
+        "content_image_icon_title": "",
+        "content_image_icon_alt": "",
+        "content_button_nr": 1,
+        "content_button_align": "",
+        "content_button_class": "",
+        "content_button_label": "",
+        "content_button_href": ""
+    },
+    "demo3":{
+        "demo_text_title": "Variation: with title on bottom",
+        "demo_text": "<p>class: <code>.with-title-bottom</code></p>"
+    },
+    "bgCompSample3": {
+        "background_component": true,
+        "background_class": "vert-pad-md white-bg"
+    },
+    "imageData3": 
+    {
+        "component": "image",
+        "background_component": false,
+        "background_class": "",
+        "component_class": "with-title-bottom",
+        "content_align": "middle left",
+        "content_title": "",
+        "content_text": "<p>Increase workflow efficiency across IT, HR, Facilities, Field Services, and other service domains.</p>",
+        "content_image": "../img/image_sample.jpg",
+        "content_image_link": "#",
+        "content_image_title": "Increase workflow efficiency across IT, HR, Facilities, Field Services, and other service domains.",
+        "content_image_alt": "",
+        "content_image_icon": "http://placehold.it/200x90/111111/ffffff",
+        "content_image_icon_title": "",
+        "content_image_icon_alt": "",
+        "content_button_nr": 1,
+        "content_button_align": "",
+        "content_button_class": "",
+        "content_button_label": "",
+        "content_button_href": ""
+    },
+    "demo4":{
+        "demo_text_title": "Variation: with caption on image",
+        "demo_text": "<p>class: <code>.with-caption</code></p>"
+    },
+    "bgCompSample4": {
+        "background_component": true,
+        "background_class": "vert-pad-md white-bg"
+    },
+    "imageData4": 
+    {
+        "component": "image",
+        "background_component": false,
+        "background_class": "",
+        "component_class": "with-caption",
+        "content_align": "middle left",
+        "content_title": "",
+        "content_text": "<p>Increase workflow efficiency across IT, HR, Facilities, Field Services, and other service domains.</p>",
+        "content_image": "../img/image_sample.jpg",
+        "content_image_link": "#",
+        "content_image_title": "Increase workflow efficiency across IT, HR, Facilities, Field Services, and other service domains.",
+        "content_image_alt": "",
+        "content_image_icon": "http://placehold.it/200x90/111111/ffffff",
+        "content_image_icon_title": "",
+        "content_image_icon_alt": "",
+        "content_button_nr": 1,
+        "content_button_align": "",
+        "content_button_class": "",
+        "content_button_label": "",
+        "content_button_href": ""
+    },
+    "demo5":{
+        "demo_text_title": "Variation: with everything",
+        "demo_text": "<p>class: <code>.with-caption</code> <code>.with-title-bottom</code> <code>.with-title-top</code></p>"
+    },
+    "bgCompSample5": {
+        "background_component": true,
+        "background_class": "vert-pad-md white-bg"
+    },
+    "imageData5": 
+    {
+        "component": "image",
+        "background_component": false,
+        "background_class": "",
+        "component_class": "with-caption with-title-bottom with-title-top",
+        "content_align": "middle left",
+        "content_title": "",
+        "content_text": "<p>Increase workflow efficiency across IT, HR, Facilities, Field Services, and other service domains.</p>",
+        "content_image": "../img/image_sample.jpg",
+        "content_image_link": "#",
+        "content_image_title": "Increase workflow efficiency across IT, HR, Facilities, Field Services, and other service domains.",
+        "content_image_alt": "",
+        "content_image_icon": "http://placehold.it/200x90/111111/ffffff",
+        "content_image_icon_title": "",
+        "content_image_icon_alt": "",
+        "content_button_nr": 1,
+        "content_button_align": "",
+        "content_button_class": "",
+        "content_button_label": "",
+        "content_button_href": ""
+    }
+}

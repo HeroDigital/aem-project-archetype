@@ -1,0 +1,31 @@
+/*
+--------------------------------------------------
+    Responsive (mobile first)
+	XS: 480px | SM: 768px | MD: 992px | LG: 1200px
+--------------------------------------------------
+*/
+
+/* < SM Phone */
+@media( max-width: ( $breakpoint_sm - 1 ) ){
+    
+}
+/* > SM Phone */
+@media( min-width: $breakpoint_sm){
+    
+}
+/* Between SM Phone and MD Tablet */
+@media( min-width: ( $breakpoint_sm ) ) and ( max-width: ( $breakpoint_md - 1 ) ){
+    
+}
+/* > MD Tablet */
+@media( min-width: $breakpoint_md){
+    
+}
+/* Between MD Tablet and LG Desktop */
+@media( min-width: ( $breakpoint_md ) ) and ( max-width: ( $breakpoint_lg - 1 ) ){
+    
+}
+/* > LG Desktop */
+@media( min-width: $breakpoint_lg){
+
+}

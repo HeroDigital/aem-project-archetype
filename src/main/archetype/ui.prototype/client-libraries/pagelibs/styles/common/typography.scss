@@ -1,0 +1,60 @@
+/*
+--------------------------------------------------
+    Typography
+-------------------------------------------------- 
+*/
+body{
+	font-family: $font-family-sans-serif;
+	// text-rendering: auto;
+	// font-smooth: auto;
+	// -webkit-font-smoothing: antialiased;
+	// -moz-osx-font-smoothing: grayscale;
+}
+
+a:focus {
+    outline: none;
+    outline-offset: 0px;
+}
+
+//------------------------------------------------
+//  Font Size - Standard
+//
+.text-component{
+	h1 		{ font-size: 60px; }
+	h2 		{ font-size: 30px; }
+	h3 		{ font-size: 24px; }
+
+	h4 		{ font-size: 20px; }
+	h5 		{ font-size: 18px; }
+	h6 		{ font-size: 16px; }
+
+	p, ul, ol	{ font-size: 14px; }
+	table tr th,
+	table tr td	{ font-size: 14px; }
+	.small	{ font-size: 12px; }
+}
+
+/*
+    Responsive (mobile first)
+    XS: 480px | SM: 768px | MD: 992px | LG: 1200px
+--------------------------------------------------
+*/
+
+/* SM Phone */
+@media(min-width: $breakpoint_xs){
+
+}
+
+/* SM Phone */
+@media(min-width: $breakpoint_sm){
+
+}
+
+/* MD Tablet */
+@media(min-width: $breakpoint_md){
+
+}
+/* LG Desktop */
+@media(min-width: $breakpoint_lg){	
+
+}

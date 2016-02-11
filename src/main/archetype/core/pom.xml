@@ -33,24 +33,61 @@
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-scr-plugin</artifactId>
             </plugin>
-            <plugin>
+
+            <!-- HERO: Customized maven-bundle-plugin configurations to support CQ Component Plugin and mvn release:perform -->
+            <plugin>  
+                <groupId>org.apache.felix</groupId>  
+                <artifactId>maven-bundle-plugin</artifactId>  
+                <extensions>true</extensions>  
+                <executions>  
+                    <!--   
+                        There seems to be an issue with this plugin where `mvn release:perform` will end up deploying to nexus twice.  
+                        Once during the install phase and again on the deploy phase. Workaround is to prevent this plugin  
+                        from running during the deploy phase.  
+                    -->  
+                    <execution>  
+                        <id>default-deploy</id>  
+                        <phase>none</phase>  
+                    </execution>  
+                </executions>  
+                <configuration>  
+                    <instructions>  
+                        <Embed-Dependency>*;scope=compile|runtime</Embed-Dependency>  
+                        <Embed-Directory>OSGI-INF/lib</Embed-Directory>  
+                        <Embed-Transitive>true</Embed-Transitive>  
+                        <Import-Package>  
+                            com.citytechinc.cq.*;resolution:=optional,  
+                            javassist;resolution:=optional,  
+                            com.sun.jdi.*;resolution:=optional,  
+                            sun.misc;resolution:=optional,  
+                            org.codehaus.plexus.util;resolution:=optional,  
+                            *  
+                        </Import-Package>  
+                        <Sling-Model-Packages>  
+                            ${package}.core  
+                        </Sling-Model-Packages>  
+                    </instructions>  
+                </configuration>  
+            </plugin>
+            <!--<plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
-                        <!--
+                        
                         <Embed-Dependency>
                             artifactId1,
                             artifactId2;inline=true
                         </Embed-Dependency>
-                        -->
+                        
                         <Sling-Model-Packages>
                             ${package}.core
                         </Sling-Model-Packages>
                     </instructions>
                 </configuration>
             </plugin>
+            -->
         </plugins>
     </build>
     <profiles>
@@ -78,6 +115,13 @@
         </profile>
     </profiles>
     <dependencies>
+        <!-- HERO: Compile time dependencies that will be bundled into this bundle -->
+        <dependency>
+            <groupId>com.herodigital.wcm</groupId>
+            <artifactId>renditions-servlet</artifactId>
+            <version>1.0.6</version>
+        </dependency>
+        
         <!-- OSGi Dependencies -->
         <dependency>
             <groupId>org.apache.felix</groupId>
@@ -131,6 +175,21 @@
         <dependency>
             <groupId>junit-addons</groupId>
             <artifactId>junit-addons</artifactId>
+        </dependency>
+
+        <!-- HERO: Additional dependencies to support CQ Component Plugin -->
+        <dependency>  
+            <groupId>com.citytechinc.cq.cq-component-plugin</groupId>  
+            <artifactId>cq-component-annotations</artifactId>  
+        </dependency>  
+        <dependency>  
+            <groupId>com.citytechinc.cq.cq-component-plugin</groupId>  
+            <artifactId>cq-component-maven-plugin</artifactId>  
+        </dependency>
+        <!-- HERO: Commons Lang -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
         </dependency>
     </dependencies>
 </project>

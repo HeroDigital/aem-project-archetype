@@ -1,0 +1,17 @@
+{
+    "BackgroundComponentData": {
+        "background_component": true,
+        "background_class": "lightest-grey-bg space space-sm-top space-md-bottom"
+    },
+    "textBasicData": {
+        "background_component": true,
+        "background_class": "vert-pad-lg",
+        "content_text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce convallis quis nibh non aliquet. Sed metus mauris, pellentesque a consectetur sed, varius ut ante. Nunc et diam vitae mauris hendrerit vestibulum. Phasellus consequat condimentum diam sit amet pretium. Cras dui tortor, vestibulum eget vehicula nec, dictum vitae mi. Sed eu dui semper, imperdiet velit ac, posuere lacus. Fusce non quam hendrerit libero vestibulum commodo pulvinar ut arcu.</p><p>Fusce id magna ipsum. Maecenas rhoncus aliquam justo, sit amet vestibulum tellus dignissim a. Proin nec vulputate metus. Mauris accumsan sem vitae leo sodales, a pharetra diam maximus. Etiam lacinia rhoncus commodo. In lacinia enim eget pharetra euismod. Curabitur aliquam quis quam vel consectetur.</p>"
+    },
+    "textImageData": {
+        "background_component": true,
+        "background_class": "vert-pad-lg",
+        "content_text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce convallis quis nibh non aliquet. Sed metus mauris, pellentesque a consectetur sed, varius ut ante. Nunc et diam vitae mauris hendrerit vestibulum. Etiam lacinia rhoncus commodo. In lacinia enim eget pharetra euismod. Curabitur aliquam quis quam vel consectetur.</p>",
+        "content_image": "http://placeimg.com/640/480/nature"
+    }
+}

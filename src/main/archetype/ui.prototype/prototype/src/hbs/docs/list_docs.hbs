@@ -1,0 +1,99 @@
+---
+pagetitle: Documentation
+published: true
+layout: list
+order: 0
+---
+
+<!-- Background Component -->
+<section class="background-component vert-pad-sm">
+    <div class="container">
+
+        <h2>Page Components</h2>
+        
+        <div class="table-responsive table-index">
+            <table class="table">
+                <colgroup>
+                    <col class="col-xs-3">
+                    <col class="col-xs-3">
+                    <col class="col-xs-4">
+                    <col class="col-xs-2">
+                </colgroup>
+
+                <thead>
+                    <tr>
+                        <th colspan="4"><h4>Base Styling</h4></th>
+                    </tr>
+                </thead>
+                <tbody>
+                {{#listTemplates 'style' 'doc'}}{{/listTemplates}}
+                </tbody>
+
+                <thead>
+                    <tr>
+                        <th colspan="4"><h4>Base Components</h4></th>
+                    </tr>
+                </thead>
+                <tbody>
+                {{#listTemplates 'base' 'doc'}}{{/listTemplates}}
+                </tbody>
+
+                <thead>
+                    <tr>
+                        <th colspan="4"><h4>Container Components</h4></th>
+                    </tr>
+                </thead>
+                <tbody>
+                {{#listTemplates 'containers' 'doc'}}{{/listTemplates}}
+                </tbody>
+
+                <thead>
+                    <tr>
+                        <th colspan="4"><h4>Navigation Components</h4></th>
+                    </tr>
+                </thead>
+                <tbody>
+                {{#listTemplates 'nav' 'doc'}}{{/listTemplates}}
+                </tbody>
+
+                <thead>
+                    <tr>
+                        <th colspan="4"><h4>Banner Components</h4></th>
+                    </tr>
+                </thead>
+                <tbody>
+                {{#listTemplates 'banners' 'doc'}}{{/listTemplates}}
+                </tbody>
+
+                <thead>
+                    <tr>
+                        <th colspan="4"><h4>Text Components</h4></th>
+                    </tr>
+                </thead>
+                <tbody>
+                {{#listTemplates 'text' 'doc'}}{{/listTemplates}}
+                </tbody>
+
+                <thead>
+                    <tr>
+                        <th colspan="4"><h4>List Components</h4></th>
+                    </tr>
+                </thead>
+                <tbody>
+                {{#listTemplates 'list' 'doc'}}{{/listTemplates}}
+                </tbody>
+
+                <thead>
+                    <tr>
+                        <th colspan="4"><h4>Misc Components</h4></th>
+                    </tr>
+                </thead>
+                <tbody>
+                {{#listTemplates 'misc' 'doc'}}{{/listTemplates}}
+                </tbody>
+
+            </table>
+        </div>
+
+    </div>
+</section>

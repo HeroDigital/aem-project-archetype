@@ -1,0 +1,9 @@
+#set( $symbol_dollar = '$' )
+<span class="edit-start container" data-sly-test="${symbol_dollar}{wcmmode.edit}">&nbsp;&#9473; ${symbol_dollar}{resource.name} &#9473;</span>
+
+<template data-sly-template.renderTextBasic="${symbol_dollar}{ @ model }">
+    <h1>${symbol_dollar}{model.text}</h1>
+    <sly data-sly-use.debug="../_debugging/_debugging.html" data-sly-call="${symbol_dollar}{debug.renderDebugging @ model=model}" />
+</template>
+
+<sly data-sly-use.model="${package}.core.models.component.TextBasic" data-sly-call="${symbol_dollar}{renderTextBasic @ model=model}" />

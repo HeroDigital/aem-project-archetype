@@ -128,6 +128,12 @@
                     </embeddeds>
                 </configuration>
             </plugin>
+
+            <!-- HERO: CQ Component Plugin is invoked within this module -->
+            <plugin>  
+                <groupId>com.citytechinc.cq.cq-component-plugin</groupId>  
+                <artifactId>cq-component-maven-plugin</artifactId>  
+            </plugin>
         </plugins>
     </build>
 
@@ -215,6 +221,12 @@
         <dependency>
             <groupId>com.day.cq.wcm</groupId>
             <artifactId>cq-wcm-taglib</artifactId>
+        </dependency>
+
+        <!-- HERO: CQ Component Plugin -->
+        <dependency>  
+            <groupId>com.citytechinc.cq.cq-component-plugin</groupId>  
+            <artifactId>cq-component-annotations</artifactId>  
         </dependency>
     </dependencies>
 </project>

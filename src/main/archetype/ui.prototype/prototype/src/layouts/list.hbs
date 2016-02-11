@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>{{pagetitle}}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" href="../img/content/favicon.png">
+    
+    <!-- MAIN font file -->
+    <link href="https://www.servicenow.com/etc/designs/servicenow/static/css/typography-web-fonts/392024/06BE56D4F18BAB58E.css"  rel="stylesheet" type="text/css" />
+
+    <!-- MAIN stylesheet -->
+    <link href="../css/pagelibs.bundle.css"  rel="stylesheet" type="text/css" />
+
+    <!-- DEMO stylesheet -->
+    <link href="../css/demo.css"  rel="stylesheet" type="text/css" />
+    
+    {{!--}}
+    <!-- Print stylesheet -->
+    <link href="../css/print.css" rel="stylesheet" media="print" type="text/css" />
+    {{--}}
+
+    {{!--}}
+    <!--[if lt IE 9]>
+    <link href="../css/ie8-and-down.css" rel="stylesheet" type="text/css" />
+    <![endif]-->
+    {{--}}
+
+    <!-- CQ author Check -->
+    <script type="text/javascript" src="../js/editmode.js"></script>
+
+    <!-- Modernizer -->
+    <script type="text/javascript" src="../js/modernizr.js"></script>
+
+</head>
+<body>
+
+    <div class="site-wrapper">
+
+        <div class="demo-header">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h1>Template List</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ul class="nav nav-pills navbar-right">
+                            <li role="presentation"><a href="../pages/list_pages.html">Page Templates</a></li>
+                            <li role="presentation"><a href="../docs/list_docs.html">Documentation</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- CONTENT -->
+        <div class="site-content">
+        
+        {% body %}
+
+        </div>
+
+    </div>
+
+    <!-- jQuery in AEM -->
+    <script type="text/javascript" src="../../../bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- MAIN JS - for production use aem.js -->
+    <script type="text/javascript" src="../js/pagelibs.bundle.js"></script>
+
+</body>
+</html>

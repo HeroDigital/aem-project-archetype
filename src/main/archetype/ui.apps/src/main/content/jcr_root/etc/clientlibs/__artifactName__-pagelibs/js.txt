@@ -1,0 +1,3 @@
+#base=js
+
+pagelibs.bundle.js
