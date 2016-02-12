@@ -88,9 +88,9 @@
                 <version>2.5.1</version>
                 <configuration>
                     <scmCommentPrefix>[maven-scm] :</scmCommentPrefix>
-                    <!-- HERO: use defaults <preparationGoals>clean install</preparationGoals> -->
-                    <!-- HERO: use defaults <goals>install</goals> -->
-                    <!-- HERO: use defaults <releaseProfiles>release</releaseProfiles> -->
+                    <!-- HERO: Uncomment if artifact repo does not exist <preparationGoals>clean install</preparationGoals> -->
+                    <!-- HERO: Uncomment if artifact repo does not exist <goals>install</goals> -->
+                    <!-- HERO: Uncomment if artifact repo does not exist <releaseProfiles>release</releaseProfiles> -->
                 </configuration>
                 <!-- HERO: Better support for git -->
                 <dependencies>
