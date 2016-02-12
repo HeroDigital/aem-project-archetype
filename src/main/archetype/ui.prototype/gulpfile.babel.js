@@ -1,3 +1,5 @@
+'use strict';
+
 import gulp from 'gulp';
 import iron from 'iron-fe';
 
@@ -94,7 +96,7 @@ gulp.task( 'watch', watchDev );
 // prototype final sequence
 gulp.task( 'prototype', function(callback) {
     runSequence(
-        'html',
+        // 'html',
         'css',
         'js',
         'movePageLibs',

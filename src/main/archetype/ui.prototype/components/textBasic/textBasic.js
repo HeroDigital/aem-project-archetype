@@ -5,7 +5,7 @@
 
 
 var textBasic = function(){
-    alert('Text Basic JS Running');
+    console.log('Text Basic JS Running');
 }
 
 module.exports = textBasic;
