@@ -29,14 +29,14 @@ public class ComponentModelDebugHelper {
     private static final Logger log = LoggerFactory.getLogger(ComponentModelDebugHelper.class);
 
     /**
-     * Entry point to generate Map<String, String> summary of an object. Used for debugging purposes.
+     * Entry point to generate {@code Map<String, String>} summary of an object. Used for debugging purposes.
      * 
      * @param prefix name prefix for variables
      * @param clazz Class to inspect
      * @param instance Instance of {@code clazz} to inspect
      * @param model Map that will be updated with fields and values
      * @param types Set that will be updated with mixin types
-     * @throws Exception
+     * @throws Exception on error
      */
     public static void appendToDebugModel(String prefix, Class<?> clazz, Object instance, Map<String, String> model, Set<Class<?>> types) throws Exception {
         if (clazz == null) return;

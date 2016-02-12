@@ -34,27 +34,19 @@
                 <artifactId>maven-scr-plugin</artifactId>
             </plugin>
 
+            <!-- HERO: javadoc linting -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+            </plugin>
+
             <!-- HERO: Customized maven-bundle-plugin configurations to support CQ Component Plugin and mvn release:perform -->
             <plugin>  
                 <groupId>org.apache.felix</groupId>  
                 <artifactId>maven-bundle-plugin</artifactId>  
                 <extensions>true</extensions>  
-                <executions>  
-                    <!--   
-                        There seems to be an issue with this plugin where `mvn release:perform` will end up deploying to nexus twice.  
-                        Once during the install phase and again on the deploy phase. Workaround is to prevent this plugin  
-                        from running during the deploy phase.  
-                    -->  
-                    <execution>  
-                        <id>default-deploy</id>  
-                        <phase>none</phase>  
-                    </execution>  
-                </executions>  
                 <configuration>  
                     <instructions>  
-                        <Embed-Dependency>*;scope=compile|runtime</Embed-Dependency>  
-                        <Embed-Directory>OSGI-INF/lib</Embed-Directory>  
-                        <Embed-Transitive>true</Embed-Transitive>  
                         <Import-Package>  
                             com.citytechinc.cq.*;resolution:=optional,  
                             javassist;resolution:=optional,  
@@ -121,7 +113,7 @@
             <artifactId>renditions-servlet</artifactId>
             <version>1.0.6</version>
         </dependency>
-        
+
         <!-- OSGi Dependencies -->
         <dependency>
             <groupId>org.apache.felix</groupId>

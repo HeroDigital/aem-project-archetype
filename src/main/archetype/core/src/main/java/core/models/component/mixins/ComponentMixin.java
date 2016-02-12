@@ -14,7 +14,7 @@ public interface ComponentMixin {
     /**
      * Supplies mixins with the component/system state necessary for component rendering.
      * 
-     * @return
+     * @return WCMUse bean (instance of 'this' object)
      */
     public WCMUse getWCMUse();
 

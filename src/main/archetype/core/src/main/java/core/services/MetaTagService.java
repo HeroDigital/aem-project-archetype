@@ -10,8 +10,7 @@ import ${package}.core.models.data.MetaTag;
 
 /**
  * Builds meta tags for resources. Support for different content types is split
- * up into separate implementations (use {@link #isSupported(Resource)} to test
- * for compatibility).
+ * up into separate implementations that are picked based on {@link #adaptToType(Resource)}.
  * <p>
  * Designed so that multiple implementations of this service are all used 
  * in sequence to build the full set of tags.
@@ -40,7 +39,7 @@ public interface MetaTagService<T> {
      * 
      * @param resource
      *            the jcr:content resource of the item
-     * @return
+     * @return Optional containing T
      */
     public Optional<T> adaptToType(Resource jcrContent);
 
@@ -61,7 +60,7 @@ public interface MetaTagService<T> {
      * <p>
      * Neutral priority is 0;
      * 
-     * @return
+     * @return Integer priority
      */
     public int getPriority();
 

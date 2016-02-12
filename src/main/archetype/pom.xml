@@ -43,7 +43,41 @@
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+        <!-- HERO: maven-release-plugin -->
+        <autoVersionSubmodules>true</autoVersionSubmodules>
     </properties>
+
+    <!-- HERO: GitHub -->
+    <!--<scm>
+        <connection>scm:git:git@github.com:HeroDigital/${artifactId}.git</connection>
+        <developerConnection>scm:git:git@github.com:HeroDigital/${artifactId}.git</developerConnection>
+        <url>https://github.com/HeroDigital/${artifactId}</url>
+    </scm>-->
+    <!-- HERO: Bitbucket -->
+    <scm>
+        <connection>scm:git:ssh://git@bitbucket.org/herodigital-ondemand/${artifactId}.git</connection>
+        <developerConnection>scm:git:ssh://git@bitbucket.org/herodigital-ondemand/${artifactId}.git</developerConnection>
+        <url>https://bitbucket.org/herodigital-ondemand/${artifactId}</url>
+    </scm>
+
+    <!-- HERO: Nexus -->
+    <distributionManagement>
+        <repository>
+            <uniqueVersion>false</uniqueVersion>
+            <id>hero-releases</id>
+            <name>Hero Repository</name>
+            <url>https://build.herodigital.com:8081/nexus/content/repositories/releases/</url>
+            <layout>default</layout>
+        </repository>
+        <snapshotRepository>
+            <uniqueVersion>true</uniqueVersion>
+            <id>hero-snapshots</id>
+            <name>Hero Snapshots</name>
+            <url>https://build.herodigital.com:8081/nexus/content/repositories/snapshots/</url>
+            <layout>default</layout>
+        </snapshotRepository>
+    </distributionManagement>
 
     <build>
         <plugins>
@@ -54,10 +88,18 @@
                 <version>2.5.1</version>
                 <configuration>
                     <scmCommentPrefix>[maven-scm] :</scmCommentPrefix>
-                    <preparationGoals>clean install</preparationGoals>
-                    <goals>install</goals>
-                    <releaseProfiles>release</releaseProfiles>
+                    <!-- HERO: Uncomment if artifact repo does not exist <preparationGoals>clean install</preparationGoals> -->
+                    <!-- HERO: Uncomment if artifact repo does not exist <goals>install</goals> -->
+                    <!-- HERO: Uncomment if artifact repo does not exist <releaseProfiles>release</releaseProfiles> -->
                 </configuration>
+                <!-- HERO: Better support for git -->
+                <dependencies>
+                    <dependency>
+                    <groupId>org.apache.maven.scm</groupId>
+                    <artifactId>maven-scm-provider-gitexe</artifactId>
+                    <version>1.9.4</version>
+                    </dependency>
+                </dependencies>
             </plugin>
             <!-- Maven Source Plugin -->
             <plugin>
@@ -232,11 +274,35 @@
                     </configuration>
                 </plugin>
                 <!-- Apache Felix Bundle Plugin -->
+                <!-- <plugin>
+                    <groupId>org.apache.felix</groupId>
+                    <artifactId>maven-bundle-plugin</artifactId>
+                    <version>2.5.3</version>
+                    <inherited>true</inherited>
+                </plugin> -->
+                <!-- HERO: Custom maven bundle plugin configurations -->
                 <plugin>
                     <groupId>org.apache.felix</groupId>
                     <artifactId>maven-bundle-plugin</artifactId>
-                    <version>2.5.4</version> <!-- HERO: Updated version to 2.5.4 -->
-                    <inherited>true</inherited>
+                    <version>2.5.4</version>
+                    <executions>
+                        <!-- 
+                            There seems to be an issue with this plugin where `mvn release:perform` will end up deploying to nexus twice.
+                            Once during the install phase and again on the deploy phase. Workaround is to prevent this plugin
+                            from running during the deploy phase.
+                        -->
+                        <execution>
+                            <id>default-deploy</id>
+                            <phase>none</phase>
+                        </execution>
+                    </executions>
+                    <configuration>
+                        <instructions>
+                            <Embed-Dependency>*;scope=compile|runtime</Embed-Dependency>
+                            <Embed-Directory>OSGI-INF/lib</Embed-Directory>
+                            <Embed-Transitive>true</Embed-Transitive>
+                        </instructions>
+                    </configuration>
                 </plugin>
                 <!-- Maven Enforcer Plugin -->
                 <plugin>
@@ -321,6 +387,28 @@
                             </pluginExecutions>
                         </lifecycleMappingMetadata>
                     </configuration>
+                </plugin>
+
+                <!-- HERO: Javadoc configurations -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <version>2.9</version>
+                    <executions>
+                        <execution>
+                            <id>attach-javadocs</id>
+                            <phase>package</phase>
+                            <goals>
+                                <goal>jar</goal>
+                            </goals>
+                            <configuration>
+                                <!-- <additionalparam>-Xdoclint:none</additionalparam> -->
+                                <additionalparam>-Xdoclint:missing</additionalparam>
+                                <additionalparam>-Xdoclint:reference</additionalparam>
+                                <additionalparam>-Xdoclint:syntax</additionalparam> 
+                            </configuration>
+                        </execution>
+                    </executions>
                 </plugin>
 
                 <!-- HERO: CQ Component Plugin used to generate component dialog.xml files -->

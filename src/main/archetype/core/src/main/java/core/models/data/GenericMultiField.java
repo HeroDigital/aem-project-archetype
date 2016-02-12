@@ -18,7 +18,7 @@ public interface GenericMultiField {
     /**
      * Code which creates new instances of this object should call this method once all fields have been set.
      * 
-     * @param request
+     * @param request Sling request
      */
     public void init(SlingHttpServletRequest request);
 

@@ -33,11 +33,11 @@ public class MultiFieldUtils {
      * Constructs a new instance of a {@link GenericMultiField} object. Object's fields must match the JCR property name in order
      * to be populated correctly. 
      * 
-     * @param resource
-     * @param type
-     * @return
-     * @throws ReflectiveOperationException
-     * @throws IntrospectionException 
+     * @param resource Resource to convert to T
+     * @param type Type of T
+     * @return Instance of T
+     * @throws ReflectiveOperationException On error
+     * @throws IntrospectionException On error
      */
     @SuppressWarnings("unchecked")
     public static <T extends GenericMultiField> T buildMultiField(Resource resource, SlingHttpServletRequest request, Class<T> type) throws ReflectiveOperationException, IntrospectionException {
@@ -77,13 +77,13 @@ public class MultiFieldUtils {
     /**
      * Creates a list of {@link GenericMultiField} objects based on a parent resource node.
      *  
-     * @param resource
-     * @param request
-     * @param type
-     * @param useCache
-     * @return
-     * @throws ReflectiveOperationException
-     * @throws IntrospectionException
+     * @param resource Parent resource node of list of T nodes
+     * @param request Sling request
+     * @param type Type of T
+     * @param useCache true to cache result in request attribute
+     * @return List of T
+     * @throws ReflectiveOperationException On error
+     * @throws IntrospectionException On error
      */
     @SuppressWarnings("unchecked")
     public static <T extends GenericMultiField> List<T> buildMultiFieldListFromResource(Resource resource, SlingHttpServletRequest request, Class<T> type, boolean useCache) throws ReflectiveOperationException, IntrospectionException {

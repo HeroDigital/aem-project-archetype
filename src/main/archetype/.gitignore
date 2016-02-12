@@ -213,3 +213,7 @@ bower_components
 .bower-registry
 .bower-tmp
 
+### Dreamweaver ###
+# DW Dreamweaver added files
+_notes
+dwsync.xml

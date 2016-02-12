@@ -93,8 +93,8 @@ public class MetaTag {
     }
     
     /**
-     * Get content. If multiple values, content is separated by {@link #SEP}
-     * @return
+     * 
+     * @return Get content. If multiple values, content is separated by {@link #SEP}
      */
     public String getContent() {
         if (content.size() == 0) return null;
@@ -104,16 +104,16 @@ public class MetaTag {
     }
     
     /**
-     * Get the internal content collection.
-     * @return
+     * 
+     * @return Get the internal content collection.
      */
     public List<String> getContentRaw() {
         return content;
     }
     
     /**
-     * Map of attributes for insertion into {@code <meta>} HTML tag
-     * @return
+     * 
+     * @return Map of attributes for insertion into {@code <meta>} HTML tag
      */
     public Map<String, String> getMetaAttributeMap() {
         Map<String, String> attributes = new HashMap<>();
