@@ -73,8 +73,8 @@ public class ServiceUtils {
      * <p>
      * This method does not validate existence of returned path.
      * 
-     * @param path
-     * @return
+     * @param path Path to evaluate
+     * @return jcr:content path
      */
     public static String getJcrContentPath(String path) {
         if (StringUtils.isBlank(path)) return null;
@@ -98,9 +98,9 @@ public class ServiceUtils {
     /**
      * Append the html extension to a {@code url}.
      * 
-     * @param request
-     * @param url
-     * @return
+     * @param request Sling request
+     * @param url URL to evaluate
+     * @return URL with extension (if needed)
      */
     public static String appendLinkExtension(SlingHttpServletRequest request, String url) {
         Resource resource = request.getResourceResolver().getResource(url);
@@ -135,8 +135,8 @@ public class ServiceUtils {
     /**
      * Pick the first non-null and non-empty string.
      * 
-     * @param strings
-     * @return
+     * @param strings Strings to coalesce
+     * @return first non-null, non-empty string
      */
     public static String coalesce(String... strings) {
         if (strings == null || strings.length == 0) return null;
@@ -149,10 +149,10 @@ public class ServiceUtils {
     /**
      * Concatenate multiple strings into one. Skips any null or empty strings. 
      * 
-     * @param delimiter
-     * @param strings
+     * @param delimiter Delimeter string
+     * @param strings Array of strings
      * 
-     * @return
+     * @return Concatonated string
      */
     public static String concat(String delimiter, String... strings) {
         if (strings == null || strings.length == 0) return null;

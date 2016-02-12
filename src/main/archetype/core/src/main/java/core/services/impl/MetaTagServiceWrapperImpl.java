@@ -136,7 +136,7 @@ public class MetaTagServiceWrapperImpl implements MetaTagServiceWrapper {
     /**
      * OSGI bind method
      * 
-     * @param service
+     * @param service Service object to register
      */
     protected void bindMetaTagServices(MetaTagService<Object> service) {
         lock.writeLock().lock();
@@ -154,7 +154,7 @@ public class MetaTagServiceWrapperImpl implements MetaTagServiceWrapper {
     /**
      * OSGI unbind method
      * 
-     * @param service
+     * @param service Service object to de-register
      */
     protected void unbindMetaTagServices(MetaTagService<Object> service) {
         lock.writeLock().lock();

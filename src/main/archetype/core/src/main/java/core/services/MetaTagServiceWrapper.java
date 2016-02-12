@@ -24,7 +24,7 @@ public interface MetaTagServiceWrapper {
     /**
      * Build meta tags for resource.
      * <p>
-     * Convenience method, will invoke {@link #buildMetaTags(Resource, Locale)} with {@link Locale#getDefault()}.
+     * Convenience method, will invoke {@link #buildMetaTags(HttpServletRequest, Resource, Locale)} with {@link Locale#getDefault()}.
      * 
      * @param request request attribute is used to cache result
      * @param resource any resource node that is at or under the page
