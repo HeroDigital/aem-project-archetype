@@ -1,38 +1,40 @@
+#set( $symbol_dollar = '$' )
+
 (function () {
     var DATA_EAEM_NESTED = "data-eaem-nested";
     var CFFW = ".foundation-field-edit";
 
-    function setSelect($field, value){
-        var select = $field.closest(".coral-Select").data("select");
+    function setSelect(${symbol_dollar}field, value){
+        var select = ${symbol_dollar}field.closest(".coral-Select").data("select");
 
         if(select){
             select.setValue(value);
         }
     }
 
-    function setCheckBox($field, value){
-        $field.prop( "checked", $field.attr("value") == value);
+    function setCheckBox(${symbol_dollar}field, value){
+        ${symbol_dollar}field.prop( "checked", ${symbol_dollar}field.attr("value") == value);
     }
 
     //reads multifield data from server, creates the nested composite multifields and fills them
     function addDataInFields() {
-        function getMultiFieldNames($multifields){
+        function getMultiFieldNames(${symbol_dollar}multifields){
             var mNames = {}, mName;
 
-            $multifields.each(function (i, multifield) {
-                mName = $(multifield).children("[name$='@Delete']").attr("name");
+            ${symbol_dollar}multifields.each(function (i, multifield) {
+                mName = ${symbol_dollar}(multifield).children("[name${symbol_dollar}='@Delete']").attr("name");
 
                 mName = mName.substring(0, mName.indexOf("@"));
 
                 mName = mName.substring(2);
 
-                mNames[mName] = $(multifield);
+                mNames[mName] = ${symbol_dollar}(multifield);
             });
 
             return mNames;
         }
 
-        function buildMultiField(data, $multifield, mName){
+        function buildMultiField(data, ${symbol_dollar}multifield, mName){
             if(_.isEmpty(mName) || _.isEmpty(data)){
                 return;
             }
@@ -42,48 +44,48 @@
                     return;
                 }
 
-                $multifield.find(".js-coral-Multifield-add").click();
+                ${symbol_dollar}multifield.find(".js-coral-Multifield-add").click();
 
                 _.each(value, function(fValue, fKey){
                     if(fKey == "jcr:primaryType"){
                         return;
                     }
 
-                    var $field = $multifield.find("[name='./" + fKey + "']").last(),
-                        type = $field.prop("type");
+                    var ${symbol_dollar}field = ${symbol_dollar}multifield.find("[name='./" + fKey + "']").last(),
+                        type = ${symbol_dollar}field.prop("type");
 
-                    if(_.isEmpty($field)){
+                    if(_.isEmpty(${symbol_dollar}field)){
                         return;
                     }
 
                     //handle single selection dropdown
                     if( type == "select-one"){
-                        setSelect($field, fValue);
+                        setSelect(${symbol_dollar}field, fValue);
                     }else if( type == "checkbox"){
-                        setCheckBox($field, fValue);
+                        setCheckBox(${symbol_dollar}field, fValue);
                     }else{
-                        $field.val(fValue);
+                        ${symbol_dollar}field.val(fValue);
                     }
                 });
             });
         }
 
-        $(document).on("dialog-ready", function() {
-            var $multifields = $("[" + DATA_EAEM_NESTED + "]");
+        ${symbol_dollar}(document).on("dialog-ready", function() {
+            var ${symbol_dollar}multifields = ${symbol_dollar}("[" + DATA_EAEM_NESTED + "]");
 
-            if(_.isEmpty($multifields)){
+            if(_.isEmpty(${symbol_dollar}multifields)){
                 return;
             }
 
-            var mNames = getMultiFieldNames($multifields),
-                $form = $(".cq-dialog"),
-                actionUrl = $form.attr("action") + ".infinity.json";
+            var mNames = getMultiFieldNames(${symbol_dollar}multifields),
+                ${symbol_dollar}form = ${symbol_dollar}(".cq-dialog"),
+                actionUrl = ${symbol_dollar}form.attr("action") + ".infinity.json";
 
-            $.ajax(actionUrl).done(postProcess);
+            ${symbol_dollar}.ajax(actionUrl).done(postProcess);
 
             function postProcess(data){
-                _.each(mNames, function($multifield, mName){
-                    buildMultiField(data[mName], $multifield, mName);
+                _.each(mNames, function(${symbol_dollar}multifield, mName){
+                    buildMultiField(data[mName], ${symbol_dollar}multifield, mName);
                 });
             }
         });
@@ -91,8 +93,8 @@
 
     //collect data from widgets in multifield and POST them to CRX
     function collectDataFromFields(){
-        function fillValue($form, fieldSetName, $field, counter){
-            var name = $field.attr("name");
+        function fillValue(${symbol_dollar}form, fieldSetName, ${symbol_dollar}field, counter){
+            var name = ${symbol_dollar}field.attr("name");
 
             if (!name) {
                 return;
@@ -103,46 +105,46 @@
                 name = name.substring(2);
             }
 
-            var value = $field.val();
+            var value = ${symbol_dollar}field.val();
 
-            if( $field.prop("type") == "checkbox" ){
-                value = $field.prop("checked") ? $field.val() : "";
+            if( ${symbol_dollar}field.prop("type") == "checkbox" ){
+                value = ${symbol_dollar}field.prop("checked") ? ${symbol_dollar}field.val() : "";
             }
 
-            $('<input />').attr('type', 'hidden')
+            ${symbol_dollar}('<input />').attr('type', 'hidden')
                 .attr('name', fieldSetName + "/" + counter + "/" + name)
                 .attr('value', value )
-                .appendTo($form);
+                .appendTo(${symbol_dollar}form);
 
             //remove the field, so that individual values are not POSTed
-            $field.remove();
+            ${symbol_dollar}field.remove();
         }
 
-        $(document).on("click", ".cq-dialog-submit", function () {
-            var $multifields = $("[" + DATA_EAEM_NESTED + "]");
+        ${symbol_dollar}(document).on("click", ".cq-dialog-submit", function () {
+            var ${symbol_dollar}multifields = ${symbol_dollar}("[" + DATA_EAEM_NESTED + "]");
 
-            if(_.isEmpty($multifields)){
+            if(_.isEmpty(${symbol_dollar}multifields)){
                 return;
             }
 
-            var $form = $(this).closest("form.foundation-form"),
-                $fieldSets, $fields;
+            var ${symbol_dollar}form = ${symbol_dollar}(this).closest("form.foundation-form"),
+                ${symbol_dollar}fieldSets, ${symbol_dollar}fields;
 
-            $multifields.each(function(i, multifield){
-                $fieldSets = $(multifield).find("[class='coral-Form-fieldset']");
+            ${symbol_dollar}multifields.each(function(i, multifield){
+                ${symbol_dollar}fieldSets = ${symbol_dollar}(multifield).find("[class='coral-Form-fieldset']");
 
-                $fieldSets.each(function (counter, fieldSet) {
-                    $fields = $(fieldSet).children().children(CFFW);
+                ${symbol_dollar}fieldSets.each(function (counter, fieldSet) {
+                    ${symbol_dollar}fields = ${symbol_dollar}(fieldSet).children().children(CFFW);
 
-                    $fields.each(function (j, field) {
-                        fillValue($form, $(fieldSet).data("name"), $(field).find("[name]"), (counter + 1));
+                    ${symbol_dollar}fields.each(function (j, field) {
+                        fillValue(${symbol_dollar}form, ${symbol_dollar}(fieldSet).data("name"), ${symbol_dollar}(field).find("[name]"), (counter + 1));
                     });
                 });
             });
         });
     }
 
-    $(document).ready(function () {
+    ${symbol_dollar}(document).ready(function () {
         addDataInFields();
         collectDataFromFields();
     });
