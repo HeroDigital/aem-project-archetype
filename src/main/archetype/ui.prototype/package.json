@@ -1,56 +1,54 @@
 {
-    "name": "uiprototype",
-    "version": "1.0.0",
-    "description": "uiprototype",
-    "repository": {
-        "type": "git",
-        "url": "https://bitbucket.org/herodigital-ondemand/"
-    },
-    "main": "index.js",
-    "dependencies": {
-        "bootstrap-sass": "3.3.5",
-        "jquery": "1.11.2"
-    },
+  "name": "uiprototype",
+  "version": "1.0.0",
+  "description": "uiprototype",
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/herodigital-ondemand/"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "bootstrap-sass": "3.x.x",
+    "jquery": "1.11.2"
+  },
+  "//": [
+    "COMMENT: Regarding GULP-SASS and NODE-SASS",
+    "COMMENT: There is a known issue with node-sass 3.4.2 (https://github.com/sass/node-sass/issues/1222).",
+    "COMMENT: This causes an error when building slick-carousel.",
+    "COMMENT: Until this gets resolved, must stick with v3.4.1 or earlier of node-sass.",
+    "COMMENT: Will use known good combination of gulp-sass 2.0.4 and node-sass 3.3.3."
+  ],
+  "devDependencies": {
+    "assemble": "latest",
+    "autoprefixer": "latest",
+    "babel": "latest",
+    "babel-core": "^6.5.1",
+    "babel-preset-es2015": "^6.5.0",
+    "babelify": "latest",
+    "browserify": "latest",
+    "browserify-shim": "latest",
+    "event-stream": "latest",
+    "gulp": "latest",
+    "gulp-concat": "latest",
+    "gulp-extname": "latest",
+    "gulp-htmlmin": "latest",
+    "gulp-prettify": "latest",
+    "gulp-rename": "latest",
+    "gulp-sass": "latest",
 
-    "//": [
-        "COMMENT: Regarding GULP-SASS and NODE-SASS",
-        "COMMENT: There is a known issue with node-sass 3.4.2 (https://github.com/sass/node-sass/issues/1222).",
-        "COMMENT: This causes an error when building slick-carousel.",
-        "COMMENT: Until this gets resolved, must stick with v3.4.1 or earlier of node-sass.", 
-        "COMMENT: Will use known good combination of gulp-sass 2.0.4 and node-sass 3.3.3." 
-    ],
-    "devDependencies": {
-        "gulp-concat": "2.6.0",
-        "gulp-prettify": "0.3.0",
-        "lodash": "3.10.1",
-        "assemble": "0.6.0-beta.5",
-        "autoprefixer": "6.0.3",
-        "babel": "5.8.23",
-        "babel-core": "5.8.25",
-        "babelify": "6.3.0",
-        "browserify": "11.1.0",
-        "browserify-shim": "3.8.10",
-        "event-stream": "3.3.1",
-        "gulp": "3.9.0",
-        "gulp-assemble": "0.3.2",
-        "gulp-extname": "0.2.0",
-        "gulp-htmlmin": "1.1.4",
-        "gulp-rename": "1.2.2",
-
-        "gulp-sass": "2.0.4",
-        "node-sass": "3.3.3",
-
-        "iron-fe": "0.1.3",
-        "postcss": "5.0.6",
-        "run-sequence": "1.1.4",
-        "vinyl-source-stream": "1.1.0"
-    },
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "browserify-shim": {
-        "jquery": "global:jQuery"
-    },
-    "author": "Hero Digital",
-    "license": "ISC"
+    "iron-fe": "latest",
+    "lodash": "latest",
+    "node-sass": "latest",
+    "postcss": "latest",
+    "run-sequence": "latest",
+    "vinyl-source-stream": "latest"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "browserify-shim": {
+    "jquery": "global:jQuery"
+  },
+  "author": "Hero Digital",
+  "license": "ISC"
 }

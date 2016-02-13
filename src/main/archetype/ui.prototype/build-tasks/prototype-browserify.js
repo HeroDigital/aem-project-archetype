@@ -9,13 +9,6 @@ var es               = require( 'event-stream' );
 
 function browserifyPrototype(  ) {
 
-	// return gulp.src('./prototype/src/js/*.js')
- //        .pipe(browserify({
- //            insertGlobals : true,
- //            debug : !gulp.env.production
- //        }))
- //        .pipe(gulp.dest('./prototype/dist/js'));
-
  return browserify({
         debug: true,
         entries: ['./prototype/src/js/demo.js', './prototype/src/js/highlight.min.js']
@@ -27,6 +20,5 @@ function browserifyPrototype(  ) {
         });
 
 }
-
 
 module.exports = browserifyPrototype;
