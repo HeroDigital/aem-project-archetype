@@ -107,13 +107,6 @@
         </profile>
     </profiles>
     <dependencies>
-        <!-- HERO: Compile time dependencies that will be bundled into this bundle -->
-        <dependency>
-            <groupId>com.herodigital.wcm</groupId>
-            <artifactId>renditions-servlet</artifactId>
-            <version>1.0.6</version>
-        </dependency>
-
         <!-- OSGi Dependencies -->
         <dependency>
             <groupId>org.apache.felix</groupId>

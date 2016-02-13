@@ -119,11 +119,16 @@
                     <verbose>true</verbose>
                     <failOnError>true</failOnError>
                     <group>${packageGroup}</group>
+                    <embeddedTarget>/apps/${appsFolderName}/install</embeddedTarget>
                     <embeddeds>
                         <embedded>
                             <groupId>${groupId}</groupId>
                             <artifactId>${rootArtifactId}.core</artifactId>
-                            <target>/apps/${appsFolderName}/install</target>
+                        </embedded>
+                        <!-- HERO: Adding renditions servlet to deployment -->
+                        <embedded>
+                            <groupId>com.herodigital.wcm</groupId>
+                            <artifactId>renditions-servlet</artifactId>
                         </embedded>
                     </embeddeds>
                 </configuration>
@@ -201,6 +206,12 @@
             <groupId>${groupId}</groupId>
             <artifactId>${rootArtifactId}.core</artifactId>
             <version>${version}</version>
+        </dependency>
+        <!-- HERO: Adding renditions servlet to deployment -->
+        <dependency>
+            <groupId>com.herodigital.wcm</groupId>
+            <artifactId>renditions-servlet</artifactId>
+            <version>1.0.6</version>
         </dependency>
 
         <dependency>
