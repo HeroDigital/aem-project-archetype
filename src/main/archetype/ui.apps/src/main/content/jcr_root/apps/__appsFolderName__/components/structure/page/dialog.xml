@@ -28,7 +28,7 @@
                     xtype="cqinclude"/>
                 <seo
                     jcr:primaryType="cq:Widget"
-                    path="/apps/servicenow-www/page/common/tab_seo.infinity.json"
+                    path="/apps/${appsFolderName}/components/structure/page/tab_seo.infinity.json"
                     xtype="cqinclude"/>
                 <cloudservices
                     jcr:primaryType="cq:Widget"

@@ -143,7 +143,10 @@
         </dependency>
         <dependency>
             <groupId>com.adobe.aem</groupId>
-            <artifactId>aem-api</artifactId>
+            <!-- HERO: Switch to aem-api if you do not have access to the uber-jar. -->
+            <!-- HERO: Refer to https://docs.adobe.com/docs/en/aem/6-1/develop/dev-tools/ht-projects-maven.html -->
+            <!--<artifactId>aem-api</artifactId>-->
+            <artifactId>uber-jar</artifactId>
         </dependency>
         <dependency>
             <groupId>org.apache.sling</groupId>
