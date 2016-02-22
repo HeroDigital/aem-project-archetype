@@ -9,7 +9,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import com.adobe.cq.sightly.WCMUse;
+import com.adobe.cq.sightly.WCMUsePojo;
 import ${package}.core.models.component.mixins.ComponentMixin;
 
 /**
@@ -18,7 +18,7 @@ import ${package}.core.models.component.mixins.ComponentMixin;
  * @author joelepps
  *
  */
-public abstract class ComponentModel extends WCMUse implements ComponentMixin {
+public abstract class ComponentModel extends WCMUsePojo implements ComponentMixin {
     
     public static final String COMPONENT_GROUP_CONTENT = "${artifactName} Content";
     public static final String COMPONENT_GROUP_MISC = "${artifactName} Misc";
@@ -31,7 +31,7 @@ public abstract class ComponentModel extends WCMUse implements ComponentMixin {
     }
     
     @Override
-    public WCMUse getWCMUse() {
+    public WCMUsePojo getWCMUse() {
         return this;
     }
     

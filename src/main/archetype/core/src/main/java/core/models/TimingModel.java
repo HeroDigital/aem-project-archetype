@@ -2,7 +2,7 @@ package ${package}.core.models;
 
 import org.apache.commons.lang3.BooleanUtils;
 
-import com.adobe.cq.sightly.WCMUse;
+import com.adobe.cq.sightly.WCMUsePojo;
 
 /**
  * If request has parameter "timing=true", then timing chart is rendered on the page as an HTML comment.
@@ -12,7 +12,7 @@ import com.adobe.cq.sightly.WCMUse;
  * @author joelepps
  *
  */
-public class TimingModel extends WCMUse {
+public class TimingModel extends WCMUsePojo {
     
     private boolean showTiming;
 

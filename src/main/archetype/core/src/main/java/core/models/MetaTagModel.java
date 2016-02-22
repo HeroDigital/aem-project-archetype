@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 
 import org.apache.sling.api.scripting.SlingScriptHelper;
 
-import com.adobe.cq.sightly.WCMUse;
+import com.adobe.cq.sightly.WCMUsePojo;
 import ${package}.core.models.data.MetaTag;
 import ${package}.core.services.MetaTagServiceWrapper;
 
@@ -16,7 +16,7 @@ import ${package}.core.services.MetaTagServiceWrapper;
  * @author joelepps
  *
  */
-public class MetaTagModel extends WCMUse {
+public class MetaTagModel extends WCMUsePojo {
     
     private static final MetaTag NULL = new MetaTag();
     
