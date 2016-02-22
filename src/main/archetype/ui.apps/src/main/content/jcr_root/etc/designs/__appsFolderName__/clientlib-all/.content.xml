@@ -2,5 +2,5 @@
 <jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
     jcr:primaryType="cq:ClientLibraryFolder"
     categories="[${cssId}.all]"
-    dependencies="[cq.jquery,pagelibs]"
+    dependencies="[cq.jquery,${artifactName}.pagelibs]"
     embed="[${cssId}.site,${cssId}.page,${cssId}.topnav,${cssId}.colctrl,${cssId}.textimage]"/>
