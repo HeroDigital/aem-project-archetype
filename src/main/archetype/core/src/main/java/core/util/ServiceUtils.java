@@ -1,8 +1,5 @@
 package ${package}.core.util;
 
-import java.util.Arrays;
-import java.util.stream.Collectors;
-
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
@@ -21,49 +18,6 @@ import com.day.cq.wcm.api.Page;
 public class ServiceUtils {
     
     private static final Logger log = LoggerFactory.getLogger(ServiceUtils.class);
-    
-/* 
- * NOT CURRENTLY USED 
- */
-//      // TODO: UPDATE ME!
-//    public static final String HOMEPAGE_CONTENT_TYPE = "";
-//    
-//    /**
-//     * Get the home page associated with this page. Home page must have the {@link #HOMEPAGE_CONTENT_TYPE}.
-//     * <p>
-//     * Order of Precedence:<p>
-//     * 1. {@code override} value (even if it is not the correct homepage template)<br>
-//     * 2. Test 3rd level parent node. 3rd level would be /content/[project-name]/en_us<br>
-//     * 3. Test 2nd level parent node. 2nd level would be /content/[project-name]<br>
-//     * 4. Use current page.<br>
-//     */
-//    public static Page getHomePage(Page currentPage, String override) {
-//        Page homePage = null;
-//        
-//        if (!StringUtils.isBlank(override)) {
-//            homePage = currentPage.getPageManager().getPage(override);
-//            if (homePage != null) return homePage;
-//        }
-//        
-//        if (homePage == null) homePage = currentPage.getAbsoluteParent(2);
-//        
-//        if (homePage == null || !isHomePage(homePage)) homePage = currentPage.getAbsoluteParent(1);
-//        
-//        if (homePage == null || !isHomePage(homePage)) homePage = currentPage;
-//
-//        return homePage;
-//    }
-//    
-//    private static boolean isHomePage(Page page) {
-//        String templateProperty = "";
-//        if (page != null) {
-//            ValueMap pageProperties = page.getProperties();
-//            templateProperty = pageProperties.get(NameConstants.PN_TEMPLATE, "");
-//            return (templateProperty.endsWith(HOMEPAGE_CONTENT_TYPE));
-//        }
-//        
-//        return false;
-//    }
     
     /**
      * Parses out a page's jcr:content node.
@@ -124,13 +78,6 @@ public class ServiceUtils {
         log.trace("Append link extension: {} -> {}", url, result);
         return result;
     }
-    
-    public static boolean isOoyalaVideoId(String candidate) {
-        if (candidate == null) return false;
-        boolean match = candidate.matches("^[a-zA-Z0-9\\-\\_]+$");
-        log.trace("{} is ooyala video: {}", candidate, match);
-        return match;
-    }
 
     /**
      * Pick the first non-null and non-empty string.
@@ -171,10 +118,6 @@ public class ServiceUtils {
         } else {
             return null;
         }
-    }
-    
-    public static String combine(String... strings) {
-        return Arrays.stream(strings).collect(Collectors.joining(" "));
     }
     
 }
