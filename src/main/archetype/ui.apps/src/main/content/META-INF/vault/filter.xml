@@ -8,6 +8,6 @@
     <filter root="/etc/designs/${appsFolderName}">
         <exclude pattern="/etc/designs/${appsFolderName}/jcr:content"/>
     </filter>
-    <filter root="/etc/clientlibs/${artifactName}-headlibs"/>
-    <filter root="/etc/clientlibs/${artifactName}-pagelibs"/>
+    <filter root="/etc/clientlibs/${cssId}-headlibs"/>
+    <filter root="/etc/clientlibs/${cssId}-pagelibs"/>
 </workspaceFilter>

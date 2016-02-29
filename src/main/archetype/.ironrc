@@ -4,13 +4,13 @@
     "css_preprocessor": "scss",
     "build_root": "ui.prototype",
     "aemClientlibs": [
-        "${artifactName}.internal"
+        "${cssId}.internal"
     ],
     "build_tool": "gulp",
     "clientlibraries": [
         {
             "name": "pagelibs",
-            "aemPath": "ui.apps/src/main/content/jcr_root/etc/clientlibs/${artifactName}-pagelibs",
+            "aemPath": "ui.apps/src/main/content/jcr_root/etc/clientlibs/${cssId}-pagelibs",
             "path": "client-libraries/pagelibs/",
             "entry": {
                 "js": "client-libraries/pagelibs/pagelibs.js",
