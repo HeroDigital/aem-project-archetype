@@ -1,117 +1,17 @@
 {
-    "demo1":{
-        "demo_text_title": "Background container",
-        "demo_text": "<p>class: white-bg space-side-wide space-md-top space-md-bottom</p>"
-    },
-    "bgCompSample1": {
+    "BackgroundComponentData": {
         "background_component": true,
-        "background_class": "white-bg space-side-wide space-md-top space-md-bottom"
+        "background_class": "lightest-grey-bg space space-sm-top space-md-bottom"
     },
-    "demo2":{
-        "demo_text_title": "Background container that overlap with next container",
-        "demo_text": "<p>class: light-grey-bg space-side-wide space-md-top space-md-bottom <code>overlap-next</code></p>"
-    },
-    "bgCompSample2": {
+    "textBasicData": {
         "background_component": true,
-        "background_class": "light-grey-bg space-side-wide space-md-top space-md-bottom overlap-next"
+        "background_class": "vert-pad-lg",
+        "content_text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce convallis quis nibh non aliquet. Sed metus mauris, pellentesque a consectetur sed, varius ut ante. Nunc et diam vitae mauris hendrerit vestibulum. Phasellus consequat condimentum diam sit amet pretium. Cras dui tortor, vestibulum eget vehicula nec, dictum vitae mi. Sed eu dui semper, imperdiet velit ac, posuere lacus. Fusce non quam hendrerit libero vestibulum commodo pulvinar ut arcu.</p><p>Fusce id magna ipsum. Maecenas rhoncus aliquam justo, sit amet vestibulum tellus dignissim a. Proin nec vulputate metus. Mauris accumsan sem vitae leo sodales, a pharetra diam maximus. Etiam lacinia rhoncus commodo. In lacinia enim eget pharetra euismod. Curabitur aliquam quis quam vel consectetur.</p>"
     },
-    "demo3":{
-        "demo_text_title": "Background container",
-        "demo_text": "<p>class: white-bg space-side-wide space-md-top space-md-bottom</p>"
-    },
-    "bgCompSample3": {
+    "textImageData": {
         "background_component": true,
-        "background_class": "white-bg space-side-wide space-md-top space-md-bottom"
-    },
-    "demo4":{
-        "demo_text_title": "2 Background containers with same background color",
-        "demo_text": "<p>both components has space-side-wide and space-md-bottom but only first component has space-md-top</p>"
-    },
-    "bgCompSample4": {
-        "background_component": true,
-        "background_class": "white-bg space-side-wide space-md-top space-md-bottom"
-    },
-    "bgCompSample41": {
-        "background_component": true,
-        "background_class": "white-bg space-side-wide space-md-bottom"
-    },
-    "demo5":{
-        "demo_text_title": "2 Background containers with different background color",
-        "demo_text": "<p></p>"
-    },
-    "bgCompSample5": {
-        "background_component": true,
-        "background_class": "white-bg space-side-wide space-md-top space-md-bottom"
-    },
-    "bgCompSample51": {
-        "background_component": true,
-        "background_class": "light-grey-bg space-side-wide space-md-top space-md-bottom"
-    },
-    "sampleText": {
-        "content_text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur congue metus convallis velit ultricies, sit amet fermentum dolor consectetur. Vivamus sit amet luctus leo, in gravida nibh. Donec iaculis pretium aliquet.</p>"
-    },
-    "quoteData": {
-        "component_class": "white-text",
-        "content_align": "middle left",
-        "content_title": "",
-        "content_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur congue metus convallis velit ultricies, sit amet fermentum dolor consectetur.",
-        "content_text_2": "John Doe",
-        "content_text_3": "CEO",
-        "content_image": "https://placeimg.com/1280/720/arch",
-        "content_image_title": "",
-        "content_image_alt": "",
-        "content_image_mobile": "",
-        "content_image_mobile_title": "",
-        "content_image_mobile_alt": "",
-        "content_image_icon": "",
-        "content_image_icon_title": "",
-        "content_image_icon_alt": "",
-        "content_button_nr": 0,
-        "content_button_align": "",
-        "content_button_class": "",
-        "content_button_label": "",
-        "content_button_href": ""
-    },
-    "bannerInlineData": {
-        "component_class": "white-text",
-        "content_align": "middle left",
-        "content_title": "<h2>Banner Title</h2>",
-        "content_text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur congue metus convallis velit ultricies, sit amet fermentum dolor consectetur. Vivamus sit amet luctus leo, in gravida nibh. Donec iaculis pretium aliquet.</p>",
-        "content_image": "https://placeimg.com/1280/720/tech",
-        "content_image_title": "",
-        "content_image_alt": "",
-        "content_image_mobile": "",
-        "content_image_mobile_title": "",
-        "content_image_mobile_alt": "",
-        "content_image_icon": "",
-        "content_image_icon_title": "",
-        "content_image_icon_alt": "",
-        "content_button_nr": 1,
-        "content_button_align": "",
-        "content_button_class": "",
-        "content_button_label": "",
-        "content_button_href": ""
-    },
-    "imageData": 
-    {
-        "component": "image",
-        "background_component": false,
-        "background_class": "",
-        "component_class": "with-title-top",
-        "content_align": "middle left",
-        "content_title": "",
-        "content_text": "<p>Increase workflow efficiency across IT, HR, Facilities, Field Services, and other service domains.</p>",
-        "content_image": "../img/image_sample.jpg",
-        "content_image_link": "",
-        "content_image_title": "Increase workflow efficiency across IT, HR, Facilities, Field Services, and other service domains.",
-        "content_image_alt": "",
-        "content_image_icon": "http://placehold.it/200x90/111111/ffffff",
-        "content_image_icon_title": "",
-        "content_image_icon_alt": "",
-        "content_button_nr": 1,
-        "content_button_align": "",
-        "content_button_class": "",
-        "content_button_label": "",
-        "content_button_href": ""
+        "background_class": "vert-pad-lg",
+        "content_text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce convallis quis nibh non aliquet. Sed metus mauris, pellentesque a consectetur sed, varius ut ante. Nunc et diam vitae mauris hendrerit vestibulum. Etiam lacinia rhoncus commodo. In lacinia enim eget pharetra euismod. Curabitur aliquam quis quam vel consectetur.</p>",
+        "content_image": "http://placeimg.com/640/480/nature"
     }
 }

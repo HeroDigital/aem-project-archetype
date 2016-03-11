@@ -15,7 +15,8 @@ import moveFontsToCq            from './build-tasks/fonts-to-cq';
 // prototype
 import sassPrototype            from './build-tasks/prototype-sass';
 import browserifyPrototype      from './build-tasks/prototype-browserify';
-import assemblePrototype        from './build-tasks/prototype-assemble';
+import assemblePrototypeDocs    from './build-tasks/prototype-assemble-docs';
+import assemblePrototypePages   from './build-tasks/prototype-assemble-pages';
 import movePagelibsToPrototype  from './build-tasks/prototype-move-pagelibs';
 import moveExtlibsToPrototype   from './build-tasks/prototype-move-extlibs';
 import moveExtlibsCssToPrototype   from './build-tasks/prototype-move-extlibs-css';
@@ -43,7 +44,8 @@ gulp.task( 'watchSass', watchSass );
 /*
  * PROTOTYPE Specific Tasks
  */
-gulp.task( 'assemble', assemblePrototype );
+gulp.task( 'assembleDocs', assemblePrototypeDocs );
+gulp.task( 'assemblePages', assemblePrototypePages );
 gulp.task( 'sassPrototype', sassPrototype );
 gulp.task( 'browserifyPrototype', browserifyPrototype );
 gulp.task( 'movePageLibs', movePagelibsToPrototype );
@@ -56,7 +58,8 @@ gulp.task( 'prettifyHtml', prettifyHtml );
 // Prototype sequences
 gulp.task( 'html', function(callback) {
     runSequence(
-        'assemble',
+        'assembleDocs',
+        'assemblePages',
         'prettifyHtml',
         callback
     );
