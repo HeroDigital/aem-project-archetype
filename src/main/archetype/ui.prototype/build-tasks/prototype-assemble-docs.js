@@ -1,43 +1,50 @@
-var gulp            = require( 'gulp' );
 var assemble        = require( 'assemble' );
 var extname         = require( 'gulp-extname' );
-
-var htmlPrototypeDocs = assemble();
+var prettify        = require( 'gulp-prettify' );
+var registerHelpers = require( './prototype-assemble-helpers' );
 
 var assemblePrototypeDocs = function(){
 
-    // htmlPrototype.option('layout', 'page');
+    var app = assemble();
 
     /**
      * Create `Docs` Collection
      */
 
-    htmlPrototypeDocs.create('docs');
+    //app.create('docs');
 
-    htmlPrototypeDocs.task('loadDocs', function(cb) {
-        htmlPrototypeDocs.partials('./components/**/*.hbs');
-        htmlPrototypeDocs.layouts('./prototype/src/layouts/*.hbs');
-        htmlPrototypeDocs.data(['./prototype/src/hbs/docs/data/*.{json,yml}']);
-        htmlPrototypeDocs.docs('./prototype/src/hbs/docs/*.hbs', { layout: 'doc' });
+    function handleError(err) {
+        console.log(err);
+        this.emit('end');
+    }
+
+    app.task('loadDocs', function(cb) {
+        app.partials('./components/**/*.hbs');
+        app.layouts('./prototype/src/layouts/*.hbs');
+        app.data(['./prototype/src/hbs/docs/data/*.{json,yml}']);
+        app.pages('./prototype/src/hbs/docs/*.hbs', { layout: 'doc' });
         cb();
     });
 
-    htmlPrototypeDocs.task('buildDocs', ['loadDocs'], function() {
-        return htmlPrototypeDocs.toStream('docs')
-            .on('error', console.log)
-            .pipe(htmlPrototypeDocs.renderFile())
-            .on('error', console.log)
-            .pipe(extname())
-            .pipe(htmlPrototypeDocs.dest('./prototype/dist/html/docs/'));
+    registerHelpers(app);
+
+    app.task('buildDocs', ['loadDocs'], function() {
+        return app.toStream('pages')
+            .pipe(app.renderFile()).on('error', handleError)
+            .pipe(extname()).on('error', handleError)
+            .pipe(prettify({indent_inner_html: false, indent_size: 4, padcomments: true})).on('error', handleError)
+            .pipe(app.dest('./prototype/dist/html/docs/')).on('error', handleError)
+
     });
 
     /**
      * Build Tasks
      */
 
-    return htmlPrototypeDocs.build(['buildDocs'], function(err) {
-        if (err) throw err;
-        console.log('done!');
+    return app.build(['buildDocs'], function(err) {
+        if (err) {
+            throw err;
+        }
     });
 }
 
