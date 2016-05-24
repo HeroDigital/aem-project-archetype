@@ -22,7 +22,6 @@ import moveExtlibsToPrototype   from './build-tasks/prototype-move-extlibs';
 import moveExtlibsCssToPrototype   from './build-tasks/prototype-move-extlibs-css';
 import moveSrcCssToPrototype   from './build-tasks/prototype-move-src-css';
 import moveFontsToPrototype     from './build-tasks/fonts-to-prototype';
-import prettifyHtml             from './build-tasks/prettify';
 import watchDev                 from './build-tasks/watch-dev.js';
 
 var runSequence = require('run-sequence');
@@ -53,23 +52,23 @@ gulp.task( 'moveExtLibs', moveExtlibsToPrototype );
 gulp.task( 'moveExtLibsCss', moveExtlibsCssToPrototype );
 gulp.task( 'moveSrcCss', moveSrcCssToPrototype );
 gulp.task( 'moveFontsToPrototype', moveFontsToPrototype );
-gulp.task( 'prettifyHtml', prettifyHtml );
 
-// Prototype sequences
+/* Build the handlebar files into the prototype html files */
 gulp.task( 'html', function(callback) {
     runSequence(
         'assembleDocs',
         'assemblePages',
-        'prettifyHtml',
         callback
     );
 });
+/* Build prototype only css (not part of the final product), output to dist */
 gulp.task( 'cssPrototype', function(callback) {
     runSequence(
         'sassPrototype',
         callback
     );
 });
+/* Build prototype only js (not part of the final product), output to dist */
 gulp.task( 'jsPrototype', function(callback) {
     runSequence(
         'browserifyPrototype',
@@ -77,7 +76,7 @@ gulp.task( 'jsPrototype', function(callback) {
     );
 });
 
-// Development sequences
+/* Build the project sass and also move to prototype dist */
 gulp.task( 'css', function(callback) {
     runSequence(
         'sass',
@@ -85,6 +84,7 @@ gulp.task( 'css', function(callback) {
         callback
     );
 });
+/* Build the project js and also move to prototype dist */
 gulp.task( 'js', function(callback) {
     runSequence(
         'browserify',
@@ -93,13 +93,13 @@ gulp.task( 'js', function(callback) {
     );
 });
 
-// Watch when develop
+/* Setup watch task */
 gulp.task( 'watch', watchDev );
 
 // prototype final sequence
 gulp.task( 'prototype', function(callback) {
     runSequence(
-        // 'html',
+        'html',
         'css',
         'js',
         'movePageLibs',

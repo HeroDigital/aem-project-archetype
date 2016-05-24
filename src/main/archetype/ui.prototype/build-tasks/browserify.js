@@ -4,8 +4,10 @@ var shim             = require( 'browserify-shim' );
 var iron			 = require( 'iron-fe' );
 var path			 = require( 'path' );
 var source           = require( 'vinyl-source-stream' );
+var buffer           = require( 'vinyl-buffer' );
 var rename           = require( 'gulp-rename' );
 var es               = require( 'event-stream' );
+var eol              = require( 'gulp-line-ending-corrector' );
 
 function browserifyTask(  ) {
 
@@ -17,9 +19,9 @@ function browserifyTask(  ) {
             .bundle()
             .pipe(source(lib.name))
             // rename them to have "bundle as postfix"
-            .pipe(rename({
-                extname: '.bundle.js'
-            }))
+            .pipe(rename({ extname: '.bundle.js' }))
+			.pipe(buffer())
+			.pipe(eol({eolc: 'LF', encoding: 'utf8'}))
             .pipe(gulp.dest( lib.path + "/build/js" ))
 			.on('end', function(){
 				console.log("		Bundled " + lib.name);

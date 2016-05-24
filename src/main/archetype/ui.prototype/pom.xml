@@ -35,8 +35,8 @@
                             <goal>install-node-and-npm</goal>
                         </goals>
                         <configuration>
-                            <nodeVersion>v4.2.2</nodeVersion>
-                            <npmVersion>2.14.7</npmVersion>
+                            <nodeVersion>v5.10.0</nodeVersion>
+                            <npmVersion>3.8.3</npmVersion>
                         </configuration>
                     </execution>
                     <execution>
@@ -54,7 +54,7 @@
                                 <goal>gulp</goal>
                             </goals>
                             <configuration>
-                                    <arguments></arguments>
+                                    <arguments />
                             </configuration>
                         </execution>
                 </executions>

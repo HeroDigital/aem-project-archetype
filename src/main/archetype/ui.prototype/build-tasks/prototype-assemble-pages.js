@@ -1,42 +1,47 @@
-var gulp            = require( 'gulp' );
 var assemble        = require( 'assemble' );
 var extname         = require( 'gulp-extname' );
-
-var htmlPrototypePages = assemble();
+var prettify        = require( 'gulp-prettify' );
+var registerHelpers = require( './prototype-assemble-helpers' );
 
 var assemblePrototypePages = function(){
 
-    // htmlPrototype.option('layout', 'page');
+    var app = assemble();
 
     /**
      * Create `Pages` Collection
      */
 
-    htmlPrototypePages.create('pages');
+    function handleError(err) {
+        console.log(err);
+        this.emit('end');
+    }
 
-    htmlPrototypePages.task('loadPages', function(cb) {
-        htmlPrototypePages.partials('./components/**/*.hbs');
-        htmlPrototypePages.layouts('./prototype/src/layouts/*.hbs');
-        htmlPrototypePages.data(['./prototype/src/hbs/pages/data/*.{json,yml}']);
-        htmlPrototypePages.pages('./prototype/src/hbs/pages/*.hbs', { layout: 'page' });
+    app.create('pages');
+
+    app.task('loadPages', function(cb) {
+        app.partials('./components/**/*.hbs');
+        app.layouts('./prototype/src/layouts/*.hbs');
+        app.data(['./prototype/src/hbs/pages/data/*.{json,yml}']);
+        app.pages('./prototype/src/hbs/pages/*.hbs', { layout: 'page' });
         cb();
     });
 
-    htmlPrototypePages.task('buildPages', ['loadPages'], function() {
-        return htmlPrototypePages.toStream('pages')
-            .on('error', console.log)
-            .pipe(htmlPrototypePages.renderFile())
-            .on('error', console.log)
-            .pipe(extname())
-            .pipe(htmlPrototypePages.dest('./prototype/dist/html/pages/'));
+    registerHelpers(app);
+
+    app.task('buildPages', ['loadPages'], function() {
+        return app.toStream('pages')
+            .pipe(app.renderFile()).on('error', handleError)
+            .pipe(extname()).on('error', handleError)
+            .pipe(prettify({indent_inner_html: false, indent_size: 4, padcomments: true})).on('error', handleError)
+            .pipe(app.dest('./prototype/dist/html/pages/')).on('error', handleError);
     })
     /**
      * Build Tasks
      */
 
-    return htmlPrototypePages.build(['buildPages'], function(err) {
+    return app.build(['buildPages'], function(err) {
         if (err) throw err;
-        console.log('done!');
+        // console.log('done!');
     });
 }
 

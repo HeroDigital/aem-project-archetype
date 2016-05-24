@@ -16,7 +16,7 @@
 
     <!-- MAIN stylesheet -->
     <link href="../../css/pagelibs.bundle.css"  rel="stylesheet" type="text/css" />
-    
+
     {{!--}}
     <!-- Print stylesheet -->
     <link href="../../css/print.css" rel="stylesheet" media="print" type="text/css" />
@@ -42,19 +42,20 @@
         {{> siteHeader }}
 
 		<!-- CONTENT -->
-    	<div class="site-content {{theme}}">
-		
+    	<div class="site-content">
+
 		{% body %}
 
 		</div>
 
 		{{> siteFooter }}
 
+
 	</div>
 
     <!-- jQuery in AEM -->
     <script type="text/javascript" src="../../../../node_modules/jquery/dist/jquery.min.js"></script>
-    
+
     <!-- MAIN JS - for production use aem.js -->
     <script type="text/javascript" src="../../js/pagelibs.bundle.js"></script>
 

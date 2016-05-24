@@ -6,7 +6,9 @@ function watchDev() {
     // Production files
     var cssToWatch = [
         "components/**/styles/**/**.scss",
-        "client-libraries/**/styles/**/**.scss"
+        "client-libraries/**/styles/**/**.scss",
+        "client-libraries/vendor/**/**.scss"
+
     ]
 
     var jsToWatch = [
