@@ -1,51 +1,25 @@
-var assemble        = require( 'assemble' );
-var extname         = require( 'gulp-extname' );
-var prettify        = require( 'gulp-prettify' );
-var registerHelpers = require( './prototype-assemble-helpers' );
+var gulp = require( 'gulp' );
+var iron = require( 'iron-fe' );
+var es   = require( 'event-stream' );
 
-var assemblePrototypeDocs = function(){
+function moveToCq( ) {
 
-    var app = assemble();
+    let librariesToCompile = iron.clientlibraries.get.all();
 
-    /**
-     * Create `Docs` Collection
-     */
-
-    //app.create('docs');
-
-    function handleError(err) {
-        console.log(err);
-        this.emit('end');
-    }
-
-    app.task('loadDocs', function(cb) {
-        app.partials('./components/**/*.hbs');
-        app.layouts('./prototype/src/layouts/*.hbs');
-        app.data(['./prototype/src/hbs/docs/data/*.{json,yml}']);
-        app.pages('./prototype/src/hbs/docs/*.hbs', { layout: 'doc' });
-        cb();
+    var tasks = librariesToCompile.map(function(lib) {
+        return gulp.src( lib.path + "/build/**/**", {
+                base : lib.path + "/build"
+            })
+            .pipe(gulp.dest( "../" + lib.aemPath ))
+			.on('end', function(){
+                console.log( "		Moved: " + lib.name );
+            	console.log( "		   To: " + lib.aemPath );
+			});
     });
 
-    registerHelpers(app);
+    // create a merged stream
+    return es.merge.apply(null, tasks);
 
-    app.task('buildDocs', ['loadDocs'], function() {
-        return app.toStream('pages')
-            .pipe(app.renderFile()).on('error', handleError)
-            .pipe(extname()).on('error', handleError)
-            .pipe(prettify({indent_inner_html: false, indent_size: 4, padcomments: true})).on('error', handleError)
-            .pipe(app.dest('./prototype/dist/html/docs/')).on('error', handleError)
-
-    });
-
-    /**
-     * Build Tasks
-     */
-
-    return app.build(['buildDocs'], function(err) {
-        if (err) {
-            throw err;
-        }
-    });
 }
 
-module.exports = assemblePrototypeDocs;
+module.exports = moveToCq;
