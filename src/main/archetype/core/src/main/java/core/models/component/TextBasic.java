@@ -7,22 +7,22 @@ import com.citytechinc.cq.component.annotations.widgets.DialogFieldSet;
 import com.citytechinc.cq.component.annotations.widgets.TextField;
 import ${package}.dialog.touch.collapsible.Collapsible;
 import ${package}.core.models.component.ComponentModel;
-import ${package}.core.models.component.mixins.background.fields.BackgroundColorMixin;
+import ${package}.core.models.component.traits.background.fields.BackgroundColorTrait;
 
-@Component(value = "Text Basic", 
-    group = ComponentModel.COMPONENT_GROUP_CONTENT, 
-    disableTargeting = true, 
-    layout = "rollover", 
-    dialogMode = "floating", 
+@Component(value = "Text Basic",
+    group = ComponentModel.COMPONENT_GROUP_CONTENT,
+    disableTargeting = true,
+    layout = "rollover",
+    dialogMode = "floating",
     dialogWidth = 800,
     tabs = { @Tab(title = "Text Basic") })
-public class TextBasic extends ComponentModel implements BackgroundColorMixin {
-    
+public class TextBasic extends ComponentModel implements BackgroundColorTrait {
+
     @DialogField(ranking = 10)
     @DialogFieldSet(title = "Background Field Set")
     @Collapsible(title = "Background Collapsible")
-    private final BackgroundColorMixin.DialogFields backgroundFields = null;
-    
+    private final BackgroundColorTrait.DialogFields backgroundFields = null;
+
     @DialogField(fieldLabel = "Text", name = "./text", ranking=1)
     @TextField
     public String getText() {

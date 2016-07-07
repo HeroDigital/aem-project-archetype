@@ -12,58 +12,58 @@ import java.util.regex.Pattern;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import ${package}.core.models.component.mixins.ComponentMixin;
+import ${package}.core.models.component.traits.ComponentTrait;
 
 /**
  * Helper class containing static utility methods for component debug output.
  * <p>
  * These can be helpful during component development.
- * <p> 
+ * <p>
  * Calls to these methods should never exist in code that is pushed to production!
- * 
+ *
  * @author joelepps
  *
  */
 public class ComponentModelDebugHelper {
-    
+
     private static final Logger log = LoggerFactory.getLogger(ComponentModelDebugHelper.class);
 
     /**
      * Entry point to generate {@code Map<String, String>} summary of an object. Used for debugging purposes.
-     * 
+     *
      * @param prefix name prefix for variables
      * @param clazz Class to inspect
      * @param instance Instance of {@code clazz} to inspect
      * @param model Map that will be updated with fields and values
-     * @param types Set that will be updated with mixin types
+     * @param types Set that will be updated with trait types
      * @throws Exception on error
      */
     public static void appendToDebugModel(String prefix, Class<?> clazz, Object instance, Map<String, String> model, Set<Class<?>> types) throws Exception {
         if (clazz == null) return;
         if (
                 (!clazz.getPackage().getName().startsWith(ComponentModel.class.getPackage().getName()))
-                
+
                 || clazz.equals(ComponentModel.class)
-                || clazz.equals(ComponentMixin.class)) {
+                || clazz.equals(ComponentTrait.class)) {
             log.debug("Skipping class {}", clazz);
             return;
         }
-        
+
         log.info("Inspecting {}", clazz);
         types.add(clazz);
-        
+
         Method[] methods = clazz.getDeclaredMethods();
         if (methods != null) {
             for (Method m : methods) {
-                handleMethod(prefix, model, types, m, instance); 
+                handleMethod(prefix, model, types, m, instance);
             }
         }
-        
+
         Class<?> superClass = clazz.getSuperclass();
-        
+
         log.info("Walking {} -> {}", clazz, superClass);
         appendToDebugModel(prefix, superClass, instance, model, types);
-        
+
         Class<?>[] interfaces = clazz.getInterfaces();
         if (interfaces != null) {
             for (Class<?> c : interfaces) {
@@ -72,20 +72,20 @@ public class ComponentModelDebugHelper {
             }
         }
     }
-    
+
     private static void handleMethod(String prefix, Map<String, String> model, Set<Class<?>> types, Method m, Object instance) throws Exception {
         if (!m.getName().startsWith("get") && !m.getName().startsWith("is")) return;
         if (m.getReturnType() == null) return;
         if (m.getParameterCount() > 0) return;
         if (Modifier.isStatic(m.getModifiers())) return;
         if (!Modifier.isPublic(m.getModifiers())) return;
-            
+
         String name = convertMethodName(m.getName());
         Object obj = m.invoke(instance);
-        
+
         handleObject(prefix + "." + name, obj, model, types);
     }
-    
+
     private static void handleObject(String name, Object obj, Map<String, String> model, Set<Class<?>> types) throws Exception {
         if (obj == null) {
             model.put(name, "null");
@@ -119,7 +119,7 @@ public class ComponentModelDebugHelper {
             appendToDebugModel(name, obj.getClass(), obj, model, types);
         }
     }
-    
+
     private static String convertMethodName(String name) {
         Pattern p = Pattern.compile("(?:get|is)(\\w)(.*)");
         Matcher m = p.matcher(name);
@@ -128,5 +128,5 @@ public class ComponentModelDebugHelper {
         }
         return name;
     }
-    
+
 }

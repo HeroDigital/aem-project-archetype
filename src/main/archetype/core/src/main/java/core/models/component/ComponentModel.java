@@ -10,36 +10,36 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 import com.adobe.cq.sightly.WCMUsePojo;
-import ${package}.core.models.component.mixins.ComponentMixin;
+import ${package}.core.models.component.traits.ComponentTrait;
 
 /**
- * Helper super type providing default implementations for {@link ComponentMixin} classes.
- * 
+ * Helper super type providing default implementations for {@link ComponentTrait} classes.
+ *
  * @author joelepps
  *
  */
-public abstract class ComponentModel extends WCMUsePojo implements ComponentMixin {
-    
+public abstract class ComponentModel extends WCMUsePojo implements ComponentTrait {
+
     public static final String COMPONENT_GROUP_CONTENT = "${artifactName} Content";
     public static final String COMPONENT_GROUP_MISC = "${artifactName} Misc";
-    
+
     private Map<String, String> debugModel;
     private Set<Class<?>> debugTypes;
-    
+
     @Override
     public void activate() throws Exception {
     }
-    
+
     @Override
     public WCMUsePojo getWCMUse() {
         return this;
     }
-    
+
     /*
      * START DEBUGGING HELPER CODE
      * Helpful during component development. Should never be invoked by production code.
      */
-    
+
     /**
      * Refer to the following for instructions on use:
      * <p>
@@ -49,7 +49,7 @@ public abstract class ComponentModel extends WCMUsePojo implements ComponentMixi
         initDebug();
         return debugModel;
     }
-    
+
     /**
      * Refer to the following for instructions on use:
      * <p>
@@ -60,7 +60,7 @@ public abstract class ComponentModel extends WCMUsePojo implements ComponentMixi
         Collections.sort(keys);
         return keys;
     }
-    
+
     /**
      * Refer to the following for instructions on use:
      * <p>
@@ -70,18 +70,17 @@ public abstract class ComponentModel extends WCMUsePojo implements ComponentMixi
         initDebug();
         return debugTypes.stream().map(x -> x.toString()).sorted().collect(Collectors.toList());
     }
-    
+
     private void initDebug() throws Exception {
         if (debugModel != null && debugTypes != null) return;
-        
+
         Map<String, String> model = new HashMap<String, String>();
         Set<Class<?>> types = new HashSet<Class<?>>();
-        
+
         ComponentModelDebugHelper.appendToDebugModel("model", getClass(), this, model, types);
-        
+
         this.debugModel = model;
         this.debugTypes = types;
     }
-    
-}
 
+}
