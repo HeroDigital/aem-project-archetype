@@ -1,9 +1,5 @@
 # Created by https://www.gitignore.io
 
-### IRON ###
-*/client-libraries/*/build
-
-
 ### Maven ###
 target/
 pom.xml.tag
