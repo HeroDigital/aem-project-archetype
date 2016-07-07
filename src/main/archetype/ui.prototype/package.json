@@ -45,7 +45,7 @@
     "run-sequence": "~1.1.5",
     "vinyl-buffer": "~1.0.0",
     "vinyl-source-stream": "~1.1.0",
-    "generator-aem-fe": "git+https://5516ec70104e7f54671441b682f1937b9f0ec131:x-oauth-basic@github.com/HeroDigital/generator-aem-fe.git"
+    "generator-aem-fe": "git+https://github.com/HeroDigital/generator-aem-fe.git"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
