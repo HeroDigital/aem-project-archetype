@@ -1,8 +1,8 @@
 {
-  "name": "textList",
+  "name": "text-image",
   "version": "1.0.0",
   "description": "",
-  "main": "textList.js",
+  "main": "text-image.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

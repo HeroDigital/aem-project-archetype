@@ -7,7 +7,6 @@
 @import "../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/normalize";
 @import "../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/print";
 //@import "../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/glyphicons";
-//@import "custom/glyphicons";
 
 // Core CSS
 @import "../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/scaffolding";
@@ -15,8 +14,7 @@
 @import "../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/code";
 @import "../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/grid";
 @import "../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/tables";
-// @import "../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/forms";
-@import "custom/forms";
+@import "../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/forms";
 @import "../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/buttons";
 
 // Components
@@ -44,7 +42,6 @@
 
 // Components w/ JavaScript
 // @import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/modals";
-@import "custom/modals";
 // @import "../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/tooltip";
 // @import "../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/popovers";
 // @import "../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/carousel";

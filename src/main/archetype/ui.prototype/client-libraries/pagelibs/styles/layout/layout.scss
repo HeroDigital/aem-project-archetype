@@ -1,7 +1,7 @@
 /*
 --------------------------------------------------
     Base Layout
--------------------------------------------------- 
+--------------------------------------------------
 */
 html{
     position: relative;
@@ -91,7 +91,7 @@ body{
 }
 /* SM Phone */
 @media(min-width: $breakpoint_sm){
-    
+
 }
 /* SM Phone */
 @media(min-width: $breakpoint_sm) and (max-width: ($breakpoint_md - 1)){
@@ -101,7 +101,7 @@ body{
 }
 /* MD Tablet */
 @media(min-width: $breakpoint_md){
-    
+
 }
 /* LG Desktop */
 @media(min-width: $breakpoint_lg){

@@ -8,7 +8,7 @@
 // Import Bootstrap 3 framework
 @import "../../vendor/bootstrap/bootstrap";
 
-// Common 
+// Common
 @import "common/variables"; // Variables
 @import "common/icons";
 @import "common/common";
@@ -22,15 +22,6 @@
 // Layout
 @import "layout/layout";
 @import "layout/space";
-
-// Partials
-@import "partials/media-tiles";
-
-// Common for Components
-@import "components/list";
-
-// Other Vendor Components
-// @import "../../../npm_modules/slick-carousel/slick/slick";
 
 // Components
 @import "pagelibs.components";

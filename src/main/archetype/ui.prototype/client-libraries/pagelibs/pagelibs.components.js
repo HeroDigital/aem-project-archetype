@@ -1,16 +1,13 @@
 /**
 *
-* This file was generated. To edit the contents edit the
-* .ironrc file for your project.
+* This file is updated automatically by yoeman generator-aem-fe.
+*
+* ONLY MODIFY IF YOU KNOW WHAT YOU ARE DOING!
 *
 */
 
 module.exports = {
-    "siteHeader" : require( './../../components/siteHeader' ),
-    "siteFooter" : require( './../../components/siteFooter' ),
     "background" : require( './../../components/background' ),
-    "textBasic" : require( './../../components/textBasic' ),
     "image" : require( './../../components/image' ),
-    "textImage" : require( './../../components/textImage' ),
-    "textList" : require( './../../components/textList' ),
+    'text-image' : require( './../../components/text-image' ),
 }

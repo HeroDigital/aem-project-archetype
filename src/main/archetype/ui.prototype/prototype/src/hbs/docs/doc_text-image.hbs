@@ -1,10 +1,6 @@
 ---
 pagetitle: Text Image
-published: true
 layout: doc
-pagetype: banners
-pagedescription:
-order: 70
 ---
 
 <!-- Background Component -->
@@ -12,13 +8,14 @@ order: 70
     <div class="container">
 
 		<h2>{{pagetitle}}</h2>
-		<span class="demo-subtitle">component</span>
 
 	</div>
 </section>
 
-{{#with doc_textImage }}
+{{#with doc_text-image }}
 
-{{> textImage textImageData}}
+{{> background-start textImageData}}
+    {{> text-image textImageData}}
+{{> background-end textImageData}}
 
 {{/with}}

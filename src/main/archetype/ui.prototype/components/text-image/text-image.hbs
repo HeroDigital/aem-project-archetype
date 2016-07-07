@@ -1,0 +1,21 @@
+<section class="component-text-image">
+    <div class="row">
+
+        <!-- Image Col -->
+        <div class="col-sm-6">
+            {{> image }}
+        </div>
+
+        <!-- Text Col -->
+        <div class="col-sm-6">
+
+            {{#if content_text }}
+            <div class="component-text text-block">
+                {{{ content_text }}}
+            </div>
+            {{/if}}
+
+        </div>
+
+    </div>
+</section>

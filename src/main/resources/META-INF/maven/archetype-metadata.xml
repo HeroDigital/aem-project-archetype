@@ -105,6 +105,19 @@
                     <includes>
                         <include>**/*.*</include>
                     </includes>
+                    <excludes>
+                        <exclude>**/browserify.js</exclude>
+                        <exclude>**/sass.js</exclude>
+                        <exclude>**/copy-fonts.js</exclude>
+                    </excludes>
+                </fileSet>
+                <fileSet filtered="true" packaged="false" encoding="UTF-8">
+                    <directory>build-tasks</directory>
+                    <includes>
+                        <include>**/browserify.js</include>
+                        <include>**/sass.js</include>
+                        <include>**/copy-fonts.js</include>
+                    </includes>
                 </fileSet>
             </fileSets>
         </module>

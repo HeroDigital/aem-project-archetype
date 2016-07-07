@@ -1,15 +1,15 @@
-var gulp 		= require( 'gulp' );
+var gulp = require( 'gulp' );
 
 function watchBrowserifyTask() {
 
-	var jsToWatch = [
-		"components/**/**.js",
-		"client-libraries/**/**.js",
-		"!components/**/node_modules",
-		"!aem-templates/**/node_modules"
-	]
+    var jsToWatch = [
+        "components/**/**.js",
+        "client-libraries/**/**.js",
+        "!components/**/node_modules",
+        "!aem-templates/**/node_modules"
+    ]
 
-	gulp.watch( jsToWatch, ['browserify'] );
+    gulp.watch( jsToWatch, ['browserify'] );
 
 }
 

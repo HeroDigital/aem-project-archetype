@@ -1,5 +1,4 @@
-var gulp         = require( 'gulp' );
-var runSequence = require('run-sequence');
+var gulp = require( 'gulp' );
 
 function watchDev() {
 
@@ -16,8 +15,8 @@ function watchDev() {
         "client-libraries/**/**.js"
     ];
 
-    gulp.watch( cssToWatch, ['css' ] );
-    gulp.watch( jsToWatch, [ 'js' ] );
+    gulp.watch( cssToWatch, ['sass' ] );
+    gulp.watch( jsToWatch, [ 'browserify' ] );
 
     // Prototype files
     var htmlToWatch = [
@@ -33,11 +32,10 @@ function watchDev() {
     var jsPrototypeToWatch = [
         "prototype/src/js/**/**.js"
     ];
-    gulp.watch( htmlToWatch, ['html' ] );
-    gulp.watch( cssPrototypeToWatch, ['cssPrototype' ] );
-    gulp.watch( jsPrototypeToWatch, [ 'jsPrototype' ] );
+    gulp.watch( htmlToWatch, ['html'] );
+    gulp.watch( cssPrototypeToWatch, ['cssPrototype'] );
+    gulp.watch( jsPrototypeToWatch, ['jsPrototype'] );
 
 }
-
 
 module.exports = watchDev;

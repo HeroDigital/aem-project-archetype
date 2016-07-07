@@ -6,13 +6,13 @@
     $space_sm:                      40px;
     $space_md:                      80px;
     $space_lg:                      120px;
--------------------------------------------------- 
+--------------------------------------------------
 */
 
-$spacing_xs:                      20px;
-$spacing_sm:                      40px;
+$spacing_xs:                      15px;
+$spacing_sm:                      30px;
 $spacing_ms:                      60px;
-$spacing_md:                      80px;
+$spacing_md:                      90px;
 $spacing_lg:                      120px;
 $spacing_xl:                      200px;
 
@@ -311,7 +311,7 @@ $spacing_xl:                      200px;
 }
 /* Between SM Phone and MD Tablet */
 @media( min-width: ( $breakpoint_sm ) ) and ( max-width: ( $breakpoint_md - 1 ) ){
-    
+
 }
 /* MD Tablet */
 @media( min-width: $breakpoint_md){
@@ -326,7 +326,7 @@ $spacing_xl:                      200px;
 }
 /* Between MD Tablet and LG Desktop */
 @media( min-width: ( $breakpoint_md ) ) and ( max-width: ( $breakpoint_lg - 1 ) ){
-    
+
 }
 /* LG Desktop */
 @media( min-width: $breakpoint_lg){
