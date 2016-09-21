@@ -8,14 +8,7 @@
   },
   "main": "index.js",
   "dependencies": {
-    "bootstrap-sass": "~3.3.6",
-    "css-modal": "~1.4.1",
-    "currency-symbol-map": "~3.0.0",
-    "jquery": "1.11.2",
-    "lodash": "~4.6.1",
-    "q": "^1.4.1",
-    "toastr": "^2.1.2",
-    "utility-opentype": "^0.1.4"
+    "bootstrap-sass": "~3.3.7"
   },
   "//": [
     "COMMENT: Regarding GULP-SASS and NODE-SASS",
@@ -33,6 +26,7 @@
     "babelify": "~7.2.0",
     "browserify": "~13.0.0",
     "browserify-shim": "~3.8.12",
+    "generator-aem-fe": "git+https://github.com/HeroDigital/generator-aem-fe.git",
     "gulp": "~3.9.1",
     "gulp-extname": "~0.2.2",
     "gulp-line-ending-corrector": "^1.0.1",
@@ -41,11 +35,11 @@
     "gulp-rename": "~1.2.2",
     "gulp-sass": "~2.2.0",
     "gulp-server-livereload": "^1.8.1",
+    "gulp-shell": "^0.5.2",
     "node-sass": "~3.4.2",
     "run-sequence": "~1.1.5",
     "vinyl-buffer": "~1.0.0",
-    "vinyl-source-stream": "~1.1.0",
-    "generator-aem-fe": "git+https://github.com/HeroDigital/generator-aem-fe.git"
+    "vinyl-source-stream": "~1.1.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

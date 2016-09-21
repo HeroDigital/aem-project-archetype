@@ -17,6 +17,7 @@ import assemblePrototypePages       from './build-tasks/prototype-assemble-pages
 import moveExtlibsToPrototype       from './build-tasks/prototype-move-extlibs';
 import moveExtlibsCssToPrototype    from './build-tasks/prototype-move-extlibs-css';
 import watchDev                     from './build-tasks/watch-dev.js';
+import watchUiApps                  from './build-tasks/watch-uiapps.js';
 import webserver                    from './build-tasks/webserver.js';
 
 /*
@@ -51,6 +52,14 @@ gulp.task( 'html', function(callback) {
 
 /* Setup watch task */
 gulp.task( 'watch', watchDev );
+gulp.task( 'watchUiAppsAuth', watchUiApps.auth);
+gulp.task( 'watchUiAppsPub', watchUiApps.pub);
+gulp.task( 'watchAll', function(callback) {
+    gulp.start('watch', 'watchUiAppsAuth');
+});
+gulp.task( 'watchAll2', function(callback) {
+    gulp.start('watch', 'watchUiAppsAuth', 'watchUiAppsPub');
+});
 
 /* Setup webserver */
 gulp.task( 'webserver', webserver );
